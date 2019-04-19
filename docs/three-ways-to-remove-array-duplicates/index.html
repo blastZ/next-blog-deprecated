@@ -1,0 +1,1451 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charSet="utf-8"/><meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"/><meta name="theme-color" content="#009688"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:118.75%/1.65 'Open Sans',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:black;font-family:'Open Sans',sans-serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;color:inherit;font-family:'Domine',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;}ul{margin-left:1.65rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.65rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;font-size:0.85rem;line-height:1.65rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;font-size:1rem;line-height:1.65rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;}blockquote{margin-left:0;margin-right:1.65rem;margin-top:0;padding-bottom:0;padding-left:1.34062rem;padding-right:0;padding-top:0;margin-bottom:1.32rem;font-size:1.1487rem;line-height:1.65rem;color:hsla(0,0%,0%,0.59);font-style:italic;border-left:0.30938rem solid hsla(0,0%,0%,0.9);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.32rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.32rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.32rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.65rem;margin-bottom:calc(1.32rem / 2);margin-top:calc(1.32rem / 2);}li > ul{margin-left:1.65rem;margin-bottom:calc(1.32rem / 2);margin-top:calc(1.32rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.32rem / 2);}code{font-size:0.85rem;line-height:1.65rem;}kbd{font-size:0.85rem;line-height:1.65rem;}samp{font-size:0.85rem;line-height:1.65rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.1rem;padding-right:1.1rem;padding-top:0.825rem;padding-bottom:calc(0.825rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}h1,h2,h3,h4,h5,h6{line-height:1.1;}a{color:#ff5700;text-decoration:none;}a:hover,a:active{color:black;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.65rem;color:black;font-weight:400;}blockquote cite:before{content:"— ";}@media only screen and (max-width:480px){html{font-size:100%;}blockquote{margin-left:-1.2375rem;margin-right:0;padding-left:0.92812rem;}}</style><link href="//fonts.googleapis.com/css?family=Noto+Serif+SC:400" rel="stylesheet" type="text/css"/><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" class="next-head"/><meta charSet="utf-8" class="next-head"/><title class="next-head">Stack Bunch</title><link rel="preload" href="/_next/static/Rlx1wxxyXjt__zFc6t~GU/pages/three-ways-to-remove-array-duplicates.js" as="script"/><link rel="preload" href="/_next/static/Rlx1wxxyXjt__zFc6t~GU/pages/_app.js" as="script"/><link rel="preload" href="/_next/static/runtime/webpack-fdce77a122c11e06ae50.js" as="script"/><link rel="preload" href="/_next/static/chunks/commons.de024f1ffeb7ff2f3b4a.js" as="script"/><link rel="preload" href="/_next/static/runtime/main-784994c3bcfb5fefec5b.js" as="script"/><style id="jss-server-side">.jss22 {
+  background-color: #fff;
+}
+.jss23 {
+  border-radius: 4px;
+}
+.jss24 {
+  box-shadow: none;
+}
+.jss25 {
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12);
+}
+.jss26 {
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12);
+}
+.jss27 {
+  box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12);
+}
+.jss28 {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.jss29 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+}
+.jss30 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.jss31 {
+  box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12);
+}
+.jss32 {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.jss33 {
+  box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12);
+}
+.jss34 {
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+.jss35 {
+  box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12);
+}
+.jss36 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.jss37 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12);
+}
+.jss38 {
+  box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12);
+}
+.jss39 {
+  box-shadow: 0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12);
+}
+.jss40 {
+  box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+}
+.jss41 {
+  box-shadow: 0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12);
+}
+.jss42 {
+  box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12);
+}
+.jss43 {
+  box-shadow: 0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12);
+}
+.jss44 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12);
+}
+.jss45 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12);
+}
+.jss46 {
+  box-shadow: 0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12);
+}
+.jss47 {
+  box-shadow: 0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12);
+}
+.jss48 {
+  box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);
+}
+.jss13 {
+  width: 100%;
+  display: flex;
+  z-index: 1100;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.jss14 {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: fixed;
+}
+.jss15 {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: absolute;
+}
+.jss16 {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: sticky;
+}
+.jss17 {
+  position: static;
+}
+.jss18 {
+  position: relative;
+}
+.jss19 {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f5f5f5;
+}
+.jss20 {
+  color: #fff;
+  background-color: #009688;
+}
+.jss21 {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #00e676;
+}
+.jss49 {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.jss50 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width:smpx) {
+  .jss50 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.jss51 {
+  min-height: 56px;
+}
+@media (min-width:xspx) and (orientation: landscape) {
+  .jss51 {
+    min-height: 48px;
+  }
+}
+@media (min-width:smpx) {
+  .jss51 {
+    min-height: 64px;
+  }
+}
+.jss52 {
+  min-height: 48px;
+}
+.jss115 {
+  color: inherit;
+  cursor: pointer;
+  margin: 0;
+  border: 0;
+  display: inline-flex;
+  padding: 0;
+  outline: none;
+  position: relative;
+  user-select: none;
+  align-items: center;
+  border-radius: 0;
+  vertical-align: middle;
+  justify-content: center;
+  -moz-appearance: none;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.jss115::-moz-focus-inner {
+  border-style: none;
+}
+.jss115.jss116 {
+  cursor: default;
+  pointer-events: none;
+}
+.jss89 {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  box-sizing: border-box;
+  font-weight: 500;
+  line-height: 1.75;
+  font-family: Noto Serif SC, serif;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.jss89:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.jss89.jss109 {
+  color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .jss89:hover {
+    background-color: transparent;
+  }
+}
+.jss89:hover.jss109 {
+  background-color: transparent;
+}
+.jss90 {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+}
+.jss91 {
+  padding: 6px 8px;
+}
+.jss92 {
+  color: #009688;
+}
+.jss92:hover {
+  background-color: rgba(0, 150, 136, 0.08);
+}
+@media (hover: none) {
+  .jss92:hover {
+    background-color: transparent;
+  }
+}
+.jss93 {
+  color: #00e676;
+}
+.jss93:hover {
+  background-color: rgba(0, 230, 118, 0.08);
+}
+@media (hover: none) {
+  .jss93:hover {
+    background-color: transparent;
+  }
+}
+.jss97 {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  padding: 5px 16px;
+}
+.jss97.jss109 {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+.jss98 {
+  color: #009688;
+  border: 1px solid rgba(0, 150, 136, 0.5);
+}
+.jss98:hover {
+  border: 1px solid #009688;
+  background-color: rgba(0, 150, 136, 0.08);
+}
+@media (hover: none) {
+  .jss98:hover {
+    background-color: transparent;
+  }
+}
+.jss99 {
+  color: #00e676;
+  border: 1px solid rgba(0, 230, 118, 0.5);
+}
+.jss99:hover {
+  border: 1px solid #00e676;
+  background-color: rgba(0, 230, 118, 0.08);
+}
+.jss99.jss109 {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .jss99:hover {
+    background-color: transparent;
+  }
+}
+.jss100 {
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12);
+  background-color: #e0e0e0;
+}
+.jss100.jss108 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.jss100:active {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.jss100.jss109 {
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.jss100:hover {
+  background-color: #d5d5d5;
+}
+@media (hover: none) {
+  .jss100:hover {
+    background-color: #e0e0e0;
+  }
+}
+.jss100:hover.jss109 {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.jss101 {
+  color: #fff;
+  background-color: #009688;
+}
+.jss101:hover {
+  background-color: #00796b;
+}
+@media (hover: none) {
+  .jss101:hover {
+    background-color: #009688;
+  }
+}
+.jss102 {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #00e676;
+}
+.jss102:hover {
+  background-color: #00c853;
+}
+@media (hover: none) {
+  .jss102:hover {
+    background-color: #00e676;
+  }
+}
+.jss106 {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  min-width: 0;
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+  border-radius: 50%;
+}
+.jss106:active {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.jss107 {
+  width: auto;
+  height: 48px;
+  padding: 0 16px;
+  min-width: 48px;
+  border-radius: 24px;
+}
+.jss110 {
+  color: inherit;
+  border-color: currentColor;
+}
+.jss111 {
+  width: 40px;
+  height: 40px;
+}
+.jss112 {
+  padding: 4px 8px;
+  min-width: 64px;
+  font-size: 0.8125rem;
+}
+.jss113 {
+  padding: 8px 24px;
+  font-size: 0.9375rem;
+}
+.jss114 {
+  width: 100%;
+}
+.jss53 {
+  margin: 0;
+  display: block;
+}
+.jss54 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 7rem;
+  font-weight: 300;
+  font-family: Noto Serif SC, serif;
+  line-height: 1.14286em;
+  margin-left: -.04em;
+  letter-spacing: -.04em;
+}
+.jss55 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 3.5rem;
+  font-weight: 400;
+  font-family: Noto Serif SC, serif;
+  line-height: 1.30357em;
+  margin-left: -.02em;
+  letter-spacing: -.02em;
+}
+.jss56 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 2.8125rem;
+  font-weight: 400;
+  font-family: Noto Serif SC, serif;
+  line-height: 1.13333em;
+  margin-left: -.02em;
+}
+.jss57 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 2.125rem;
+  font-weight: 400;
+  font-family: Noto Serif SC, serif;
+  line-height: 1.20588em;
+}
+.jss58 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: Noto Serif SC, serif;
+  line-height: 1.35417em;
+}
+.jss59 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.3125rem;
+  font-weight: 500;
+  font-family: Noto Serif SC, serif;
+  line-height: 1.16667em;
+}
+.jss60 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Noto Serif SC, serif;
+  line-height: 1.5em;
+}
+.jss61 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.jss62 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.jss63 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.75rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 400;
+  line-height: 1.66;
+}
+.jss64 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 500;
+  line-height: 1.75;
+  text-transform: uppercase;
+}
+.jss65 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 6rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 300;
+  line-height: 1;
+}
+.jss66 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 3.75rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 300;
+  line-height: 1;
+}
+.jss67 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 3rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 400;
+  line-height: 1.04;
+}
+.jss68 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 2.125rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 400;
+  line-height: 1.17;
+}
+.jss69 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.5rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 400;
+  line-height: 1.33;
+}
+.jss70 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.25rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.jss71 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 400;
+  line-height: 1.75;
+}
+.jss72 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 500;
+  line-height: 1.57;
+}
+.jss73 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.75rem;
+  font-family: Noto Serif SC, serif;
+  font-weight: 400;
+  line-height: 2.66;
+  text-transform: uppercase;
+}
+.jss74 {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+.jss75 {
+  text-align: left;
+}
+.jss76 {
+  text-align: center;
+}
+.jss77 {
+  text-align: right;
+}
+.jss78 {
+  text-align: justify;
+}
+.jss79 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.jss80 {
+  margin-bottom: 0.35em;
+}
+.jss81 {
+  margin-bottom: 16px;
+}
+.jss82 {
+  color: inherit;
+}
+.jss83 {
+  color: #009688;
+}
+.jss84 {
+  color: #00e676;
+}
+.jss85 {
+  color: rgba(0, 0, 0, 0.87);
+}
+.jss86 {
+  color: rgba(0, 0, 0, 0.54);
+}
+.jss87 {
+  color: #f44336;
+}
+.jss88 {
+  display: inline;
+}
+.jss7 {
+  flex-grow: 1;
+}
+.jss8 {
+  flex-grow: 1;
+}
+.jss9 {
+  margin-left: -12px;
+  margin-right: 20px;
+}
+.jss10 {
+  color: #555;
+  opacity: 0.98;
+  background: rgba(255,255,255,1);
+}
+@media (min-width:1430px) {
+  .jss11 {
+    width: 1334px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+.jss12 {
+  margin-left: -12px;
+  margin-right: 20px;
+}
+@media (max-width:991.95px) {
+  .jss118 {
+    max-width: 650px;
+  }
+}
+@media (min-width:768px) and (max-width:1199.95px) {
+  .jss118 {
+    max-width: 750px;
+  }
+}
+@media (min-width:992px) {
+  .jss118 {
+    max-width: 970px;
+  }
+}
+@media (min-width:1200px) {
+  .jss118 {
+    max-width: 1170px;
+  }
+}
+.jss129 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.jss130 {
+  margin: 0;
+  box-sizing: border-box;
+}
+.jss131 {
+  min-width: 0;
+}
+.jss132 {
+  flex-direction: column;
+}
+.jss133 {
+  flex-direction: column-reverse;
+}
+.jss134 {
+  flex-direction: row-reverse;
+}
+.jss135 {
+  flex-wrap: nowrap;
+}
+.jss136 {
+  flex-wrap: wrap-reverse;
+}
+.jss137 {
+  align-items: center;
+}
+.jss138 {
+  align-items: flex-start;
+}
+.jss139 {
+  align-items: flex-end;
+}
+.jss140 {
+  align-items: baseline;
+}
+.jss141 {
+  align-content: center;
+}
+.jss142 {
+  align-content: flex-start;
+}
+.jss143 {
+  align-content: flex-end;
+}
+.jss144 {
+  align-content: space-between;
+}
+.jss145 {
+  align-content: space-around;
+}
+.jss146 {
+  justify-content: center;
+}
+.jss147 {
+  justify-content: flex-end;
+}
+.jss148 {
+  justify-content: space-between;
+}
+.jss149 {
+  justify-content: space-around;
+}
+.jss150 {
+  justify-content: space-evenly;
+}
+.jss151 {
+  width: calc(100% + 8px);
+  margin: -4px;
+}
+.jss151 > .jss130 {
+  padding: 4px;
+}
+.jss152 {
+  width: calc(100% + 16px);
+  margin: -8px;
+}
+.jss152 > .jss130 {
+  padding: 8px;
+}
+.jss153 {
+  width: calc(100% + 24px);
+  margin: -12px;
+}
+.jss153 > .jss130 {
+  padding: 12px;
+}
+.jss154 {
+  width: calc(100% + 32px);
+  margin: -16px;
+}
+.jss154 > .jss130 {
+  padding: 16px;
+}
+.jss155 {
+  width: calc(100% + 40px);
+  margin: -20px;
+}
+.jss155 > .jss130 {
+  padding: 20px;
+}
+.jss156 {
+  flex-grow: 0;
+  max-width: none;
+  flex-basis: auto;
+}
+.jss157 {
+  flex-grow: 1;
+  max-width: 100%;
+  flex-basis: 0;
+}
+.jss158 {
+  flex-grow: 0;
+  max-width: 8.333333%;
+  flex-basis: 8.333333%;
+}
+.jss159 {
+  flex-grow: 0;
+  max-width: 16.666667%;
+  flex-basis: 16.666667%;
+}
+.jss160 {
+  flex-grow: 0;
+  max-width: 25%;
+  flex-basis: 25%;
+}
+.jss161 {
+  flex-grow: 0;
+  max-width: 33.333333%;
+  flex-basis: 33.333333%;
+}
+.jss162 {
+  flex-grow: 0;
+  max-width: 41.666667%;
+  flex-basis: 41.666667%;
+}
+.jss163 {
+  flex-grow: 0;
+  max-width: 50%;
+  flex-basis: 50%;
+}
+.jss164 {
+  flex-grow: 0;
+  max-width: 58.333333%;
+  flex-basis: 58.333333%;
+}
+.jss165 {
+  flex-grow: 0;
+  max-width: 66.666667%;
+  flex-basis: 66.666667%;
+}
+.jss166 {
+  flex-grow: 0;
+  max-width: 75%;
+  flex-basis: 75%;
+}
+.jss167 {
+  flex-grow: 0;
+  max-width: 83.333333%;
+  flex-basis: 83.333333%;
+}
+.jss168 {
+  flex-grow: 0;
+  max-width: 91.666667%;
+  flex-basis: 91.666667%;
+}
+.jss169 {
+  flex-grow: 0;
+  max-width: 100%;
+  flex-basis: 100%;
+}
+@media (min-width:smpx) {
+  .jss170 {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .jss171 {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .jss172 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .jss173 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .jss174 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .jss175 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .jss176 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .jss177 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .jss178 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .jss179 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .jss180 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .jss181 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .jss182 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .jss183 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:768px) {
+  .jss184 {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .jss185 {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .jss186 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .jss187 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .jss188 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .jss189 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .jss190 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .jss191 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .jss192 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .jss193 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .jss194 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .jss195 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .jss196 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .jss197 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:992px) {
+  .jss198 {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .jss199 {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .jss200 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .jss201 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .jss202 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .jss203 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .jss204 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .jss205 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .jss206 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .jss207 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .jss208 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .jss209 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .jss210 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .jss211 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:1200px) {
+  .jss212 {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .jss213 {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .jss214 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .jss215 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .jss216 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .jss217 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .jss218 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .jss219 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .jss220 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .jss221 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .jss222 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .jss223 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .jss224 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .jss225 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+.jss261 {
+  color: rgba(0, 0, 0, 0.87);
+  cursor: text;
+  display: inline-flex;
+  font-size: 1rem;
+  font-family: Noto Serif SC, serif;
+  line-height: 1.1875em;
+  align-items: center;
+}
+.jss261.jss264 {
+  color: rgba(0, 0, 0, 0.38);
+  cursor: default;
+}
+.jss269 {
+  padding: 6px 0 7px;
+}
+.jss270 {
+  width: 100%;
+}
+.jss271 {
+  font: inherit;
+  width: 100%;
+  color: currentColor;
+  border: 0;
+  margin: 0;
+  padding: 6px 0 7px;
+  display: block;
+  min-width: 0;
+  box-sizing: content-box;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.jss271::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.jss271::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.jss271:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.jss271::-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.jss271:focus {
+  outline: 0;
+}
+.jss271:invalid {
+  box-shadow: none;
+}
+.jss271::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.jss271.jss264 {
+  opacity: 1;
+}
+label[data-shrink=false] + .jss262 .jss271::-webkit-input-placeholder {
+  opacity: 0;
+}
+label[data-shrink=false] + .jss262 .jss271::-moz-placeholder {
+  opacity: 0;
+}
+label[data-shrink=false] + .jss262 .jss271:-ms-input-placeholder {
+  opacity: 0;
+}
+label[data-shrink=false] + .jss262 .jss271::-ms-input-placeholder {
+  opacity: 0;
+}
+label[data-shrink=false] + .jss262 .jss271:focus::-webkit-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .jss262 .jss271:focus::-moz-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .jss262 .jss271:focus:-ms-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .jss262 .jss271:focus::-ms-input-placeholder {
+  opacity: 0.42;
+}
+.jss272 {
+  padding-top: 3px;
+}
+.jss273 {
+  resize: none;
+  padding: 0;
+}
+.jss274 {
+  height: 1.1875em;
+}
+.jss275 {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+.jss278 {
+  top: -5px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  bottom: 0;
+  padding: 0;
+  position: absolute;
+  transition: padding-left 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,border-color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,border-width 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+.jss279 {
+  padding: 0;
+  text-align: left;
+  transition: width 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  line-height: 11px;
+}
+.jss248 {
+  position: relative;
+}
+.jss248 .jss255 {
+  border-color: rgba(0, 0, 0, 0.23);
+}
+.jss248:hover:not(.jss250):not(.jss249):not(.jss253) .jss255 {
+  border-color: rgba(0, 0, 0, 0.87);
+}
+.jss248.jss249 .jss255 {
+  border-color: #009688;
+  border-width: 2px;
+}
+.jss248.jss253 .jss255 {
+  border-color: #f44336;
+}
+.jss248.jss250 .jss255 {
+  border-color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .jss248:hover:not(.jss250):not(.jss249):not(.jss253) .jss255 {
+    border-color: rgba(0, 0, 0, 0.23);
+  }
+}
+.jss251 {
+  padding-left: 14px;
+}
+.jss252 {
+  padding-right: 14px;
+}
+.jss254 {
+  padding: 18.5px 14px;
+  box-sizing: border-box;
+}
+.jss256 {
+  padding: 18.5px 14px;
+}
+.jss257 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.jss258 {
+  padding: 0;
+}
+.jss259 {
+  padding-left: 0;
+}
+.jss260 {
+  padding-right: 0;
+}
+.jss241 {
+  color: rgba(0, 0, 0, 0.54);
+  padding: 0;
+  font-size: 1rem;
+  font-family: Noto Serif SC, serif;
+  line-height: 1;
+}
+.jss241.jss242 {
+  color: #00796b;
+}
+.jss241.jss243 {
+  color: rgba(0, 0, 0, 0.38);
+}
+.jss241.jss244 {
+  color: #f44336;
+}
+.jss247.jss244 {
+  color: #f44336;
+}
+.jss230 {
+  transform-origin: top left;
+}
+.jss235 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(0, 24px) scale(1);
+}
+.jss236 {
+  transform: translate(0, 21px) scale(1);
+}
+.jss237 {
+  transform: translate(0, 1.5px) scale(0.75);
+  transform-origin: top left;
+}
+.jss238 {
+  transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+}
+.jss239 {
+  z-index: 1;
+  transform: translate(12px, 20px) scale(1);
+  pointer-events: none;
+}
+.jss239.jss236 {
+  transform: translate(12px, 17px) scale(1);
+}
+.jss239.jss237 {
+  transform: translate(12px, 10px) scale(0.75);
+}
+.jss239.jss237.jss236 {
+  transform: translate(12px, 7px) scale(0.75);
+}
+.jss240 {
+  z-index: 1;
+  transform: translate(14px, 20px) scale(1);
+  pointer-events: none;
+}
+.jss240.jss236 {
+  transform: translate(14px, 17px) scale(1);
+}
+.jss240.jss237 {
+  transform: translate(14px, -6px) scale(0.75);
+}
+.jss226 {
+  margin: 0;
+  border: 0;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  min-width: 0;
+  flex-direction: column;
+  vertical-align: top;
+}
+.jss227 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+.jss228 {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+.jss229 {
+  width: 100%;
+}
+.jss119 {
+  margin-top: 24px;
+}
+.jss120 {
+  padding: 24px 8px;
+  background: #333;
+}
+@media (max-width:991.95px) {
+  .jss121 {
+    width: 650px;
+  }
+}
+@media (min-width:768px) and (max-width:1199.95px) {
+  .jss121 {
+    width: 750px;
+  }
+}
+@media (min-width:992px) {
+  .jss121 {
+    width: 970px;
+  }
+}
+@media (min-width:1200px) {
+  .jss121 {
+    width: 1170px;
+  }
+}
+.jss122 {
+  color: #ccc;
+  margin: 0;
+  font-size: 15px;
+}
+.jss123 {
+  width: 100%;
+  max-width: 300px;
+}
+.jss124 {
+  margin: 40px 0px 24px 0px;
+}
+.jss125 {
+  color: white;
+}
+.jss126 {
+  border-color: white !important;
+}
+.jss127 {
+  color: white !important;
+}
+.jss128 {
+  color: white;
+  padding: 10px 32px;
+  margin-top: 16px;
+  border-color: white;
+}
+.jss128:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.jss1 {
+  margin-top: 40px;
+}
+@media (max-width:991.95px) {
+  .jss1 {
+    font-size: 18px;
+    margin-left: auto;
+    padding-left: 20px;
+    margin-right: auto;
+    padding-right: 20px;
+  }
+}
+@media (min-width:992px) {
+  .jss1 {
+    width: 66.66666667%;
+    margin-left: 16.66666667%;
+  }
+}
+.jss2 {
+  text-align: center;
+}
+.jss3 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 32px;
+}
+.jss4 {
+  color: #777;
+}
+.jss5 {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.jss5:hover {
+  color: #ff5700;
+  opacity: 1;
+}
+.jss6 {
+  word-wrap: break-word;
+  margin-top: 64px;
+}
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  background-color: #fafafa;
+}
+@media print {
+  body {
+    background-color: #fff;
+  }
+}</style></head><body><div id="__next"><div class="jss7"><header class="jss22 jss25 jss13 jss14 jss20 mui-fixed jss10"><div class="jss49 jss51 jss50 jss11"><h6 class="jss53 jss70 jss82 jss8" style="color:#000">StackBunch</h6><button class="jss115 jss89 jss91 jss94" tabindex="0" type="button"><span class="jss90">BLOG</span></button><button class="jss115 jss89 jss91 jss94" tabindex="0" type="button"><span class="jss90">CASE</span></button><button class="jss115 jss89 jss91 jss92 jss94 jss95" tabindex="0" type="button"><span class="jss90">ABOUT</span></button></div></header></div><div style="width:100%;height:408px;margin-top:56px;position:relative;overflow:hidden"><div style="position:absolute;width:100%;height:100%;top:0;left:0;background:url(&#x27;static/bg.jpg&#x27;);background-attachment:fixed;background-size:cover;background-repeat:no-repeat"></div><div style="position:absolute;width:100%;height:100%;top:0;left:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 64px"><h5 class="jss53 jss69" style="color:#fff;filter:none">Share Everything, Front-End, Back-End, Data Visulization, Linux.</h5></div></div><div class="jss118" style="margin:0 auto;padding-top:8px"><div class="jss1"><h1 class="jss2">数组去重的三种方式</h1><h4 class="jss3"><span class="jss4">2019/03/12 - </span><a class="jss5" href="https://github.com/blastZ/posts/blob/master/three-ways-to-remove-array-duplicates.md">EDIT THIS POST ON GITHUB</a></h4><div class="jss6"><h1 style="display:none">数组去重的三种方式</h1><p>这是数组去重的三种方式，我个人偏向于使用 <code style="padding:2px;font-family:roboto;color:#ff5700">filter</code> 的方式，它在性能方面更占优。</p><div style="background-color:#2f1d2e;padding:24px;padding-left:32px;border-left:5px solid #38bb6c;overflow-x:auto;margin:32px 0px"><pre class="prism-code language-js" style="color:#06b6ef;background-color:#282A36;padding:0;margin:0;background:#2f1d2e"><div class="token-line" style="color:#06b6ef"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">const</span><span class="token plain"> array </span><span class="token operator">=</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">1</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">3</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)">// 1.Set</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token operator">...</span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">new</span><span class="token plain"> </span><span class="token class-name">Set</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)">// 2.filter</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain">array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">filter</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">o</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> index</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token operator">=&gt;</span><span class="token plain"> array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">indexOf</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">o</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token operator">===</span><span class="token plain"> index</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)">// 3.reduce</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain">array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">reduce</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">result</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> current</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token operator">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain">  </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">return</span><span class="token plain"> result</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">indexOf</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">current</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token operator">&lt;</span><span class="token plain"> </span><span class="token number">0</span><span class="token plain"> </span><span class="token operator">?</span><span class="token plain"> result</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">concat</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token plain">current</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">:</span><span class="token plain"> result</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)">// [&#x27;sheep&#x27;, 1, 2, 3]</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div></pre></div><h2>1.使用 Set</h2><p>先解释一下什么是 Set</p><blockquote><p>Set 是 ES6 新增的一种数据对象，只允许保存唯一变量，当你将它传入一个数组时，它会移除所有重复的变量。</p></blockquote><p>使用 Set 去除重复变量分为两步</p><ol><li>首先创建一个 Set ，并传入一个数组，由于 Set 只允许唯一变量，所有的重复项都会被移除。</li><li>现在所有重复性都被移除了，接着使用展开运算符 <code style="padding:2px;font-family:roboto;color:#ff5700">...</code> 将 Set 转换会数组。</li></ol><div style="background-color:#2f1d2e;padding:24px;padding-left:32px;border-left:5px solid #38bb6c;overflow-x:auto;margin:32px 0px"><pre class="prism-code language-js" style="color:#06b6ef;background-color:#282A36;padding:0;margin:0;background:#2f1d2e"><div class="token-line" style="color:#06b6ef"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">const</span><span class="token plain"> array </span><span class="token operator">=</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">1</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">3</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)">// 第一步</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">const</span><span class="token plain"> uniqueSet </span><span class="token operator">=</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">new</span><span class="token plain"> </span><span class="token class-name">Set</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)">// Set { &#x27;sheep&#x27;, 1, 2, 3 }</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)">// 第二步</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">const</span><span class="token plain"> backToArray </span><span class="token operator">=</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token operator">...</span><span class="token plain">uniqueSet</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)">// [&#x27;sheep&#x27;, 1, 2, 3]</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div></pre></div><h2>2.使用 filter</h2><p>为了理解这种方式，先要了解这两个方法 <code style="padding:2px;font-family:roboto;color:#ff5700">indexOf</code> 和 <code style="padding:2px;font-family:roboto;color:#ff5700">filter</code>。</p><h3>indexOf</h3><p>indexOf 方法会根据所提供的元素返回数组中第一个被找到相同元素的下标</p><div style="background-color:#2f1d2e;padding:24px;padding-left:32px;border-left:5px solid #38bb6c;overflow-x:auto;margin:32px 0px"><pre class="prism-code language-js" style="color:#06b6ef;background-color:#282A36;padding:0;margin:0;background:#2f1d2e"><div class="token-line" style="color:#06b6ef"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">const</span><span class="token plain"> array </span><span class="token operator">=</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">1</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">3</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain">array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">indexOf</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> </span><span class="token comment" style="color:rgb(98, 114, 164)">// 0</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain">array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">indexOf</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token number">1</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> </span><span class="token comment" style="color:rgb(98, 114, 164)">// 1</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain">array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">indexOf</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token number">2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> </span><span class="token comment" style="color:rgb(98, 114, 164)">// 2</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain">array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">indexOf</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token number">3</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> </span><span class="token comment" style="color:rgb(98, 114, 164)">// 5</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div></pre></div><h3>filter</h3><p><code style="padding:2px;font-family:roboto;color:#ff5700">filter</code> 方法会根据我们给定的条件返回一个新的数组。换句话说就是，如果元素通过
+条件返回 <code style="padding:2px;font-family:roboto;color:#ff5700">true</code>，它就会被包含在过滤后的数组中，返回 <code style="padding:2px;font-family:roboto;color:#ff5700">false</code> 就不会包含在新的
+数组中。</p><h3>过滤重复项</h3><p>我们可以通过 <code style="padding:2px;font-family:roboto;color:#ff5700">filter</code> 方法检索重复项并剔除它们，只需要将过滤条件设置为：</p><div style="background-color:#2f1d2e;padding:24px;padding-left:32px;border-left:5px solid #38bb6c;overflow-x:auto;margin:32px 0px"><pre class="prism-code language-js" style="color:#06b6ef;background-color:#282A36;padding:0;margin:0;background:#2f1d2e"><div class="token-line" style="color:#06b6ef"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">const</span><span class="token plain"> array </span><span class="token operator">=</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">1</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">3</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain">array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">filter</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">o</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> index</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token operator">=&gt;</span><span class="token plain"> array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">indexOf</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">o</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token operator">===</span><span class="token plain"> index</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)">// [&#x27;sheep&#x27;, 1, 2, 3]</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div></pre></div><h2>3.使用 reduce</h2><p><code style="padding:2px;font-family:roboto;color:#ff5700">reduce</code> 方法会根据传入的 <code style="padding:2px;font-family:roboto;color:#ff5700">reducer</code> 函数重组数组内的元素。</p><p>为了达到我们的目标，我们的 <code style="padding:2px;font-family:roboto;color:#ff5700">reducer</code> 函数需要检查最终的数组中是否已经包含了当前元素，如果没有就加入，
+否则跳过当前元素。</p><div style="background-color:#2f1d2e;padding:24px;padding-left:32px;border-left:5px solid #38bb6c;overflow-x:auto;margin:32px 0px"><pre class="prism-code language-js" style="color:#06b6ef;background-color:#282A36;padding:0;margin:0;background:#2f1d2e"><div class="token-line" style="color:#06b6ef"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">const</span><span class="token plain"> array </span><span class="token operator">=</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">1</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:#ef6155">&#x27;sheep&#x27;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">3</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain">array</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">reduce</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">result</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> current</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token operator">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain">  </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">return</span><span class="token plain"> result</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">indexOf</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">current</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token operator">&lt;</span><span class="token plain"> </span><span class="token number">0</span><span class="token plain"> </span><span class="token operator">?</span><span class="token plain"> result</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">concat</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token plain">current</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">:</span><span class="token plain"> result</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)">// [&#x27;sheep&#x27;, 1, 2, 3]</span><span class="token plain"></span></div><div class="token-line" style="color:#06b6ef"><span class="token plain" style="display:inline-block"></span></div></pre></div></div></div></div><div class="jss129 jss137 jss146 jss119"><div style="width:100%;height:308px;margin-top:56px;position:relative;overflow:hidden"><div style="position:absolute;width:100%;height:100%;top:0;left:0;background:url(&#x27;static/bg.jpg&#x27;);background-attachment:fixed;background-size:cover;background-repeat:no-repeat"></div><div style="position:absolute;width:100%;height:100%;top:0;left:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 64px"><h5 class="jss53 jss69" style="color:#fff;filter:none">Never miss an article from stack-bunch.</h5><div class="jss129 jss132 jss137 jss146"><div class="jss130 jss123"><div class="jss226 jss227 jss229 jss124"><label class="jss241 jss230 jss127 jss235 jss238 jss240" data-shrink="false" for="outlined-email-input">Email</label><div class="jss261 jss248 jss125 jss270 jss262"><fieldset aria-hidden="true" style="padding-left:8px" class="jss278 jss255 jss126"><legend class="jss279" style="width:0.01px"><span>&#8203;</span></legend></fieldset><input type="email" aria-invalid="false" autoComplete="email" class="jss271 jss256 jss274" id="outlined-email-input" name="email"/></div></div></div><div class="jss130"><button class="jss115 jss89 jss97 jss98 jss128" tabindex="0" type="button"><span class="jss90">Subscribe</span></button></div></div></div></div><div class="jss129 jss137 jss146 jss120"><div class="jss129 jss137 jss121"><h6 class="jss53 jss72 jss80 jss122">© 2018 blastz, forever.</h6></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/three-ways-to-remove-array-duplicates","query":{},"buildId":"Rlx1wxxyXjt__zFc6t~GU","nextExport":true}</script><script async="" id="__NEXT_PAGE__/three-ways-to-remove-array-duplicates" src="/_next/static/Rlx1wxxyXjt__zFc6t~GU/pages/three-ways-to-remove-array-duplicates.js"></script><script async="" id="__NEXT_PAGE__/_app" src="/_next/static/Rlx1wxxyXjt__zFc6t~GU/pages/_app.js"></script><script src="/_next/static/runtime/webpack-fdce77a122c11e06ae50.js" async=""></script><script src="/_next/static/chunks/commons.de024f1ffeb7ff2f3b4a.js" async=""></script><script src="/_next/static/runtime/main-784994c3bcfb5fefec5b.js" async=""></script></body></html>
