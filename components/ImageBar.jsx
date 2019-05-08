@@ -19,7 +19,7 @@ const ImageBar = ({ src, content, styles, children }) => {
           height: '100%',
           top: 0,
           left: 0,
-          background: `url('https://i.ibb.co/wwgWfmQ/bg.jpg')`,
+          background: `url('/static/bg.jpg')`,
           backgroundAttachment: 'fixed',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Document, { Head, Main, NextScript } from 'next/document';
 import flush from 'styled-jsx/server';
-import { TypographyStyle, GoogleFont } from 'react-typography';
+import { TypographyStyle } from 'react-typography';
 import typography from '../utils/typography';
 
 class MyDocument extends Document {
@@ -18,7 +18,6 @@ class MyDocument extends Document {
           {/* PWA primary color */}
           <meta name="theme-color" content={pageContext ? pageContext.theme.palette.primary.main : null} />
           <TypographyStyle typography={typography} />
-          <GoogleFont typography={typography} />
         </Head>
         <body>
           <Main />

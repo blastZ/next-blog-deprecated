@@ -11,7 +11,7 @@ import Router from 'next/router';
 
 const PostCard = ({ classes, data: { title, date, tags, slug, subTitle, thumb }, changeCategory }) => {
   const toPost = () => {
-    Router.push(`/posts${slug}`);
+    Router.push(`${slug}`);
   };
 
   return (
