@@ -9,14 +9,14 @@ import CalendarIcon from '@material-ui/icons/CalendarTodayOutlined';
 import Link from '@material-ui/core/Link';
 import Router from 'next/router';
 
-const PostCard = ({ classes, data: { title, date, tags, slug, subTitle }, changeCategory }) => {
+const PostCard = ({ classes, data: { title, date, tags, slug, subTitle, thumb }, changeCategory }) => {
   const toPost = () => {
     Router.push(`/posts${slug}`);
   };
 
   return (
     <Card elevation={0} className={classes.card}>
-      <img onClick={toPost} src={`static/posts${slug}/thumb.jpg`} className={classes.cardActionArea} />
+      <img onClick={toPost} src={thumb} className={classes.cardActionArea} />
       {/* <CardActionArea className={classes.cardActionArea} onClick={toPost} /> */}
       <CardContent className={classes.cardContent}>
         <Link
