@@ -9,7 +9,7 @@ import Category from '../components/Category';
 import PageButton from '../components/PageButton';
 import posts from '../data/posts';
 
-const IndexPage = ({ data = [], classes }) => {
+const MainPage = ({ data = [], classes }) => {
   const [categoryList, setCategoryList] = useState([]);
   const [category, setCategory] = useState('all');
 
@@ -71,9 +71,12 @@ const IndexPage = ({ data = [], classes }) => {
         <Grid className={classes.container} container wrap="nowrap">
           <Grid className={classes.left} item>
             <Grid className={classes.posts} item>
-              {posts.slice(0, 7).map(({ id, thumb, title, tags, date, subTitle, slug }) => (
-                <PostCard key={slug} id={id} data={{ thumb, title, tags, slug, date, subTitle }} changeCategory={changeCategory} />
-              ))}
+              {posts
+                .filter(o => o.published)
+                .slice(0, 7)
+                .map(({ id, thumb, title, tags, date, subTitle, slug }) => (
+                  <PostCard key={slug} id={id} data={{ thumb, title, tags, slug, date, subTitle }} changeCategory={changeCategory} />
+                ))}
             </Grid>
             <Divider light />
             <PageButton />
@@ -112,4 +115,4 @@ const styles = theme => ({
   }
 });
 
-export default withStyles(styles)(IndexPage);
+export default withStyles(styles)(MainPage);

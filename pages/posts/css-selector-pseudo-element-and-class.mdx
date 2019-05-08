@@ -1,11 +1,12 @@
-import Post from '../components/Post';
+import Post from '../../components/Post';
 
 export const frontMatter = {
   slug: '/css-selector-pseudo-element-and-class',
   title: 'CSS 伪元素与伪类',
   subTitle: '介绍伪元素和伪类区别，并说明如何在日常开发中使用它们。',
   tags: ['css'],
-  date: '2019/03/12'
+  date: '2019/03/12',
+  published: false
 };
 
 export default ({ children }) => <Post data={frontMatter}>{children}</Post>;

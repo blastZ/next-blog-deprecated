@@ -11,12 +11,12 @@ import Router from 'next/router';
 
 const PostCard = ({ classes, data: { title, date, tags, slug, subTitle }, changeCategory }) => {
   const toPost = () => {
-    Router.push(slug);
+    Router.push(`/posts${slug}`);
   };
 
   return (
     <Card elevation={0} className={classes.card}>
-      <img onClick={toPost} src={`static${slug}/thumb.jpg`} className={classes.cardActionArea} />
+      <img onClick={toPost} src={`static/posts${slug}/thumb.jpg`} className={classes.cardActionArea} />
       {/* <CardActionArea className={classes.cardActionArea} onClick={toPost} /> */}
       <CardContent className={classes.cardContent}>
         <Link

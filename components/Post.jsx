@@ -60,7 +60,7 @@ const Post = ({ data: { title, date, slug }, classes, children }) => {
           <h1 className={classes.title}>{title}</h1>
           <h4 className={classes.subTitle}>
             <span className={classes.date}>{`${date} - `}</span>
-            <a className={classes.editLink} href={`https://github.com/blastZ/posts/blob/master/${slug.replace(/\//gm, '')}.md`}>
+            <a className={classes.editLink} href={`https://github.com/blastZ/next-blog/blob/master/pages/posts${slug}.mdx`}>
               EDIT THIS POST ON GITHUB
             </a>
           </h4>

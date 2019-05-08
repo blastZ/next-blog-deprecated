@@ -9,7 +9,7 @@ import Footer from './Footer';
 const Layout = ({ children }) => (
   <>
     <Header siteTitle={'Stack Bunch'} />
-    <ImageBar content={'Share Everything, Front-End, Back-End, Data Visulization, Linux.'} />
+    <ImageBar content={'Share Everything, Front-End, Back-End, Data Visualization, Linux.'} />
     {/* <Links /> */}
     <Main>{children}</Main>
     <Footer />
