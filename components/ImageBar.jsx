@@ -1,55 +1,44 @@
-import { useEffect, useRef } from 'react';
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
-const ImageBar = ({ src, content, styles, children }) => {
+const ImageBar = ({ classes, slogan = false, title, height = 464, children }) => {
   return (
-    <div
-      style={{
-        width: '100%',
-        height: 408,
-        marginTop: 56,
-        position: 'relative',
-        overflow: 'hidden',
-        ...styles
-      }}>
-      <div
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          top: 0,
-          left: 0,
-          background: `url('/static/bg.jpg')`,
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          top: 0,
-          left: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '0 64px'
-        }}>
-        <Typography
-          style={{
-            color: '#fff',
-            filter: 'none'
-          }}
-          variant="h5">
-          {content}
-        </Typography>
-        {children}
-      </div>
-    </div>
+    <Grid className={classes.container} style={{ height }} container direction="column" alignItems="center" justify="center" wrap="nowrap">
+      {slogan ? <Slogan className={classes.slogan} /> : null}
+      <Title className={classes.title} text={title} />
+      {children}
+    </Grid>
   );
 };
 
-export default ImageBar;
+const Slogan = ({ className }) => (
+  <Typography className={className} variant="h5">
+    {'< Web ❤ />'}
+  </Typography>
+);
+
+const Title = ({ text, className }) => (
+  <Typography className={className} variant="h5">
+    {text}
+  </Typography>
+);
+
+const styles = () => ({
+  container: {
+    width: '100%',
+    padding: '56px 16px 40px 16px',
+    background: '#090a0b no-repeat 50%',
+    backgroundImage: `url('/static/bg.jpg')`
+  },
+  slogan: {
+    color: '#fff',
+    marginBottom: 16
+  },
+  title: {
+    color: '#fff',
+    textAlign: 'center'
+  }
+});
+
+export default withStyles(styles)(ImageBar);

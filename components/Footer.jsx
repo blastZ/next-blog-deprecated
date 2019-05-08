@@ -10,11 +10,7 @@ import ImageBar from './ImageBar';
 const Footer = ({ classes }) => {
   return (
     <Grid className={classes.container} container alignItems="center" justify="center">
-      <ImageBar
-        content={'Never miss an article from stack-bunch.'}
-        styles={{
-          height: 308
-        }}>
+      <ImageBar title={'Never miss an article from stack-bunch.'} height={308}>
         <Subscribe classes={classes} />
       </ImageBar>
 
@@ -71,7 +67,7 @@ const styles = theme => ({
     marginTop: 24
   },
   contentContainer: {
-    background: '#333',
+    background: '#000',
     padding: '24px 8px'
   },
   content: {
@@ -89,7 +85,7 @@ const styles = theme => ({
     }
   },
   owner: {
-    color: '#ccc',
+    color: 'hsla(0,0%,100%,.7)',
     margin: 0,
     fontSize: 15
   },
