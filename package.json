@@ -7,7 +7,7 @@
     "start": "pm2 start ./ecosystem.config.js",
     "build": "next build",
     "export": "next export",
-    "publish-gh-pages": "next build && next export -o docs && cd docs && touch .nojekyll && cd _next && touch .gitkeep && cd ../../ && git add . && git commit -m 'Build gh-pages' && git subtree push --prefix docs gh-pages master",
+    "publish-gh-pages": "next build && next export -o docs && cd docs && touch .nojekyll && cd _next && touch .gitkeep && cd ../../ && git subtree push --prefix docs gh-pages master",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
