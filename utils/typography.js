@@ -3,7 +3,7 @@ import AltonTheme from 'typography-theme-alton';
 
 const typography = new Typography({
   ...AltonTheme,
-  baseFontSize: '19px',
+  baseFontSize: '20px',
   baseLineHeight: 1.65
 });
 

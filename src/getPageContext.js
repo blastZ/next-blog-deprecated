@@ -29,7 +29,7 @@ const theme = createMuiTheme({
     color: '#555'
   },
   typography: {
-    fontFamily: ['Noto Serif SC', 'serif'],
+    fontFamily: ['Ali-Regular', 'serif'],
     useNextVariants: true
   }
 });
