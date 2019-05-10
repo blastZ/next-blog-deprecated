@@ -50,20 +50,7 @@ const MainPage = ({ data = [], classes }) => {
   //   }
   // }, [category]);
 
-  const changeCategory = category => {
-    tween({
-      from: window.scrollY,
-      to: 0,
-      ease: easing.easeOut
-    }).start({
-      update: v => {
-        window.scrollTo(0, v);
-      },
-      complete: () => {
-        setCategory(category);
-      }
-    });
-  };
+  const changeCategory = category => {};
 
   return (
     <>
@@ -71,12 +58,9 @@ const MainPage = ({ data = [], classes }) => {
         <Grid className={classes.container} container wrap="nowrap">
           <Grid className={classes.left} item>
             <Grid className={classes.posts} item>
-              {posts
-                .filter(o => o.published)
-                .slice(0, 7)
-                .map(({ id, thumb, title, tags, date, subTitle, slug }) => (
-                  <PostCard key={slug} id={id} data={{ thumb, title, tags, slug, date, subTitle }} changeCategory={changeCategory} />
-                ))}
+              {posts.slice(0, 7).map(({ id, thumb, title, tags, date, subTitle, slug }) => (
+                <PostCard key={slug} id={id} data={{ thumb, title, tags, slug, date, subTitle }} changeCategory={changeCategory} />
+              ))}
             </Grid>
             <Divider light />
             <PageButton />

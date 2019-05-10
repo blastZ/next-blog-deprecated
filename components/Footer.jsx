@@ -18,9 +18,7 @@ const Footer = ({ classes }) => {
 };
 
 const styles = theme => ({
-  container: {
-    marginTop: 24
-  },
+  container: {},
   contentContainer: {
     background: '#000',
     padding: '24px 8px'
