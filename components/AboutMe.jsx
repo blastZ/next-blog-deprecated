@@ -16,7 +16,7 @@ const AboutMe = ({ classes }) => {
         </Grid>
         <Grid item container spacing={16}>
           <Grid item xs={3}>
-            <img src="/static/avatars.jpg" />
+            <img src="/static/avatars.webp" />
           </Grid>
           <Grid item xs={9}>
             <Typography variant="body1">

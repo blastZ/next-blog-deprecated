@@ -29,7 +29,7 @@ const styles = () => ({
     width: '100%',
     padding: '56px 16px 40px 16px',
     background: '#090a0b no-repeat 50%',
-    backgroundImage: `url('/static/bg.jpg')`
+    backgroundImage: `url('/static/bg.webp')`
   },
   slogan: {
     color: '#fff',
