@@ -10,3 +10,17 @@ html {
   font-family: 'Ali-Regular';
   src: local('Alibaba-PuHuiTi-Regular'), url('/static/font/Alibaba-PuHuiTi-Regular.otf');
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  border: none;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0) inset;
+}

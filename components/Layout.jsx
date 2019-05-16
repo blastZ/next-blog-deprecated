@@ -13,7 +13,7 @@ const Layout = ({ children }) => (
     <ImageBar title="Share Everything, Front-End, Back-End, Data Visualization, Linux." slogan />
     {/* <Links /> */}
     <Main>{children}</Main>
-    <ImageBar title="Never miss an article from stack-bunch." height={308}>
+    <ImageBar title="Never miss an article from stack-bunch." height={360}>
       <Subscribe />
     </ImageBar>
     <AboutMe />
