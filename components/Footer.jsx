@@ -2,15 +2,22 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Link from 'next/link';
+
+import GithubIcon from './icons/Github';
 
 const Footer = ({ classes }) => {
   return (
     <Grid className={classes.container} container alignItems="center" justify="center">
       <Grid className={classes.contentContainer} container alignItems="center" justify="center">
-        <Grid className={classes.content} container alignItems="center" justify="flex-start">
-          <Typography className={classes.owner} variant="subtitle2" gutterBottom>
+        <Grid className={classes.links} container alignItems="center" justify="center">
+          {/* <Typography className={classes.owner} variant="subtitle2" gutterBottom>
             © 2018 blastz, forever.
-          </Typography>
+          </Typography> */}
+          <a style={{ display: 'flex' }} href="https://github.com/blastZ" target="_blank">
+            <GithubIcon />
+          </a>
         </Grid>
       </Grid>
     </Grid>
@@ -23,7 +30,7 @@ const styles = theme => ({
     background: '#000',
     padding: '24px 8px'
   },
-  content: {
+  links: {
     [theme.breakpoints.down('md')]: {
       width: 650
     },
@@ -41,6 +48,12 @@ const styles = theme => ({
     color: 'hsla(0,0%,100%,.7)',
     margin: 0,
     fontSize: 15
+  },
+  button: {
+    color: 'white',
+    fontSize: 15,
+    visibility: 'hidden',
+    background: 'rgba(255,255,255,0.1) !important'
   }
 });
 
