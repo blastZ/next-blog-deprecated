@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -7,28 +6,21 @@ import Typography from '@material-ui/core/Typography';
 import { Grid } from '@material-ui/core';
 import CalendarIcon from '@material-ui/icons/CalendarTodayOutlined';
 import Link from '@material-ui/core/Link';
-import Router from 'next/router';
+import NextLink from 'next/link';
 
 const PostCard = ({ classes, data: { title, date, tags, slug, subTitle, thumb }, changeCategory }) => {
-  const toPost = () => {
-    Router.push(`${slug}`);
-  };
-
   return (
     <Card elevation={0} className={classes.card}>
-      <img onClick={toPost} src={thumb} className={classes.cardActionArea} />
-      {/* <CardActionArea className={classes.cardActionArea} onClick={toPost} /> */}
+      <NextLink href={slug}>
+        <img src={thumb} className={classes.cardActionArea} />
+      </NextLink>
       <CardContent className={classes.cardContent}>
-        <Link
-          onClick={toPost}
-          className={classes.title}
-          style={{
-            color: '#555555'
-          }}
-          variant="h5">
-          {title}
-        </Link>
-        <Grid style={{ fontSize: '0.8em', padding: '8px 0px', color: '#999999' }} container justify="space-between">
+        <NextLink href={slug}>
+          <Link className={classes.title} variant="h5">
+            {title}
+          </Link>
+        </NextLink>
+        <Grid className={classes.infoContainer} container justify="space-between">
           <Grid item>
             IN{' '}
             <Link onClick={() => changeCategory(tags[0] || '')} className={classes.category}>
@@ -45,9 +37,11 @@ const PostCard = ({ classes, data: { title, date, tags, slug, subTitle, thumb },
         <Typography className={classes.subTitle} component="p">
           {subTitle}
         </Typography>
-        <Button color="primary" className={classes.readButton} onClick={toPost} variant="outlined">
-          Read
-        </Button>
+        <NextLink href={slug}>
+          <Button color="primary" className={classes.readButton} variant="outlined">
+            Read
+          </Button>
+        </NextLink>
       </CardContent>
     </Card>
   );
@@ -110,6 +104,7 @@ const styles = theme => ({
     borderRadius: '1px'
   },
   title: {
+    color: '#555555',
     cursor: 'pointer',
     textUnderlinePosition: 'under',
     '&:hover': {
@@ -123,6 +118,11 @@ const styles = theme => ({
     '&:hover': {
       color: '#009688 !important'
     }
+  },
+  infoContainer: {
+    fontSize: '0.8em',
+    padding: '8px 0px',
+    color: '#999999'
   }
 });
 

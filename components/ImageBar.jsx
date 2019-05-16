@@ -27,13 +27,13 @@ const Title = ({ text, className }) => (
 const styles = () => ({
   container: {
     width: '100%',
-    padding: '56px 16px 40px 16px',
+    padding: '56px 16px',
     background: '#090a0b no-repeat 50%',
-    backgroundImage: `url('/static/bg.jpg')`
+    backgroundImage: `url('/static/bg.webp')`
   },
   slogan: {
     color: '#fff',
-    marginBottom: 16
+    margin: '16px 0px'
   },
   title: {
     color: '#fff',

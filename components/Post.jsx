@@ -52,7 +52,11 @@ const components = {
   h1: Title
 };
 
-const Post = ({ data: { title, date, slug }, classes, children }) => {
+const Post = ({ frontMatter, classes, children }) => {
+  if (!frontMatter) return <div>No Such File</div>;
+
+  const { title, date, slug } = frontMatter;
+
   return (
     <MDXProvider components={components}>
       <Layout>

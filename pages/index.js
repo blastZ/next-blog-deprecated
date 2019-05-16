@@ -50,25 +50,12 @@ const MainPage = ({ data = [], classes }) => {
   //   }
   // }, [category]);
 
-  const changeCategory = category => {
-    tween({
-      from: window.scrollY,
-      to: 0,
-      ease: easing.easeOut
-    }).start({
-      update: v => {
-        window.scrollTo(0, v);
-      },
-      complete: () => {
-        setCategory(category);
-      }
-    });
-  };
+  const changeCategory = category => {};
 
   return (
     <>
       <Layout>
-        <Grid className={classes.container} container wrap="nowrap">
+        <Grid container wrap="nowrap" justify="center">
           <Grid className={classes.left} item>
             <Grid className={classes.posts} item>
               {posts
@@ -91,11 +78,8 @@ const MainPage = ({ data = [], classes }) => {
 };
 
 const styles = theme => ({
-  container: {
-    justifyContent: 'center'
-  },
   left: {
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('md')]: {
       width: '75%'
     },
     padding: '0px 32px'
