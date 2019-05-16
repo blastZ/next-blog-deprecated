@@ -55,7 +55,7 @@ const MainPage = ({ data = [], classes }) => {
   return (
     <>
       <Layout>
-        <Grid className={classes.container} container wrap="nowrap">
+        <Grid container wrap="nowrap" justify="center">
           <Grid className={classes.left} item>
             <Grid className={classes.posts} item>
               {posts.slice(0, 7).map(({ id, thumb, title, tags, date, subTitle, slug }) => (
@@ -75,11 +75,8 @@ const MainPage = ({ data = [], classes }) => {
 };
 
 const styles = theme => ({
-  container: {
-    justifyContent: 'center'
-  },
   left: {
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('md')]: {
       width: '75%'
     },
     padding: '0px 32px'

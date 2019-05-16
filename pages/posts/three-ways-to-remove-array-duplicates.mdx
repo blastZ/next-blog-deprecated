@@ -1,7 +1,7 @@
-import Post from '../components/Post';
+import usePost from '../../hooks/usePost';
 
 export const frontMatter = {
-  slug: '/three-ways-to-remove-array-duplicates',
+  slug: '/posts/three-ways-to-remove-array-duplicates',
   title: '数组去重的三种方式',
   subTitle: '这是三种过滤数组中的重复元素，并返回只包含唯一变量的方法，我个人偏向于使用 filter，它在性能方面更占优势。',
   tags: ['javascript'],
@@ -10,7 +10,7 @@ export const frontMatter = {
   published: true
 };
 
-export default ({ children }) => <Post data={frontMatter}>{children}</Post>;
+export default usePost(frontMatter);
 
 # 数组去重的三种方式
 

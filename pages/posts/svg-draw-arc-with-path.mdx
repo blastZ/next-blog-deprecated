@@ -1,7 +1,7 @@
-import Post from '../components/Post';
+import usePost from '../../hooks/usePost';
 
 export const frontMatter = {
-  slug: '/svg-draw-arc-with-path',
+  slug: '/posts/svg-draw-arc-with-path',
   title: '如何在 SVG 中使用 path 绘制弧形',
   subTitle: '由于 path 的灵活性，用 path 来绘制弧形能够更好的控制效果，本文将介绍原生和 d3 两种方式来实现它。',
   tags: ['svg', 'data visualization'],
@@ -9,7 +9,7 @@ export const frontMatter = {
   published: false
 };
 
-export default ({ children }) => <Post data={frontMatter}>{children}</Post>;
+export default usePost(frontMatter);
 
 # 如何在 SVG 中使用 path 绘制弧形
 
