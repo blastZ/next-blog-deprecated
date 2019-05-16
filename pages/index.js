@@ -58,9 +58,12 @@ const MainPage = ({ data = [], classes }) => {
         <Grid container wrap="nowrap" justify="center">
           <Grid className={classes.left} item>
             <Grid className={classes.posts} item>
-              {posts.slice(0, 7).map(({ id, thumb, title, tags, date, subTitle, slug }) => (
-                <PostCard key={slug} id={id} data={{ thumb, title, tags, slug, date, subTitle }} changeCategory={changeCategory} />
-              ))}
+              {posts
+                .filter(o => o.published)
+                .slice(0, 7)
+                .map(({ id, thumb, title, tags, date, subTitle, slug }) => (
+                  <PostCard key={slug} id={id} data={{ thumb, title, tags, slug, date, subTitle }} changeCategory={changeCategory} />
+                ))}
             </Grid>
             <Divider light />
             <PageButton />
