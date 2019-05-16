@@ -1,15 +1,16 @@
-import Post from '../components/Post';
+import usePost from '../../hooks/usePost';
 
 export const frontMatter = {
-  slug: '/ecmascript-standard',
+  slug: '/posts/ecmascript-standard',
   title: 'ECMAScript 标准',
-  subTitle: '介绍伪元素和伪类区别，并说明如何在日常开发中使用它们。',
-  tags: ['css'],
-  date: '2019/03/12',
+  subTitle: '介绍 ECMAScript 标准，以及在 TC39 发布流程下，各个阶段的意义。',
+  tags: ['javascript'],
+  date: '2019/05/15',
+  thumb: '/static/thumbs/ecmascript-standard.webp',
   published: true
 };
 
-export default ({ children }) => <Post data={frontMatter}>{children}</Post>;
+export default usePost(frontMatter);
 
 # ECMAScript 标准
 
