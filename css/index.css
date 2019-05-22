@@ -9,6 +9,7 @@ html {
 @font-face {
   font-family: 'Ali-Regular';
   src: local('Alibaba-PuHuiTi-Regular'), url('/static/font/Alibaba-PuHuiTi-Regular.otf');
+  font-display: swap;
 }
 
 input:-webkit-autofill,
