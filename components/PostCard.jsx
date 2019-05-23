@@ -11,7 +11,7 @@ import NextLink from 'next/link';
 const PostCard = ({ classes, data: { title, date, tags, slug, subTitle, thumb }, changeCategory }) => {
   return (
     <Card elevation={0} className={classes.card}>
-      <NextLink href={slug}>
+      <NextLink prefetch href={slug}>
         <img src={thumb} className={classes.cardActionArea} />
       </NextLink>
       <CardContent className={classes.cardContent}>

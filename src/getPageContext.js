@@ -1,13 +1,7 @@
 import { SheetsRegistry } from 'jss';
 import { createMuiTheme, createGenerateClassName } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
-import yellow from '@material-ui/core/colors/yellow';
-import amber from '@material-ui/core/colors/amber';
 import teal from '@material-ui/core/colors/teal';
-import cyan from '@material-ui/core/colors/cyan';
-import blue from '@material-ui/core/colors/blue';
-import orange from '@material-ui/core/colors/orange';
 
 // A theme with custom primary and secondary color.
 // It's optional.
