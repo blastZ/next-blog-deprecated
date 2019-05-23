@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start ./ecosystem.config.js",
+    "start": "npm run build && pm2 startOrRestart ./ecosystem.config.js --env production",
     "build": "next build",
     "export": "next export",
     "publish-gh-pages": "next build && next export -o docs && cd docs && touch .nojekyll && touch CNAME && echo 'stackbunch.com' | tee CNAME && cd _next && touch .gitkeep && cd ../ && git init && git remote add origin git@github.com:blastZ/blastz.github.io.git && git add . && git commit -m 'Build' && git push --force origin master",
     "setup": "pm2 deploy production setup",
-    "publish": "pm2 deploy production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish": "pm2 deploy production"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.2",
