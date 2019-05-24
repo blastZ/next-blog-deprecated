@@ -10,11 +10,11 @@ const AboutMe = ({ classes }) => {
       {/* <Grid className={classes.recentContainer} item xs={12} md={7}>
         <RecentPost />
       </Grid> */}
-      <Grid className={classes.meContainer} item xs={12} md={5} container direction="column" spacing={16}>
+      <Grid className={classes.meContainer} item xs={12} md={5} container direction="column" spacing={2}>
         <Grid item>
           <Typography variant="h6">ABOUT ME</Typography>
         </Grid>
-        <Grid item container spacing={16}>
+        <Grid item container spacing={2}>
           <Grid item xs={3}>
             <img src="/static/avatars.webp" />
           </Grid>

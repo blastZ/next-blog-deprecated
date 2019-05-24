@@ -1,20 +1,23 @@
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Grid } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import CalendarIcon from '@material-ui/icons/CalendarTodayOutlined';
 import Link from '@material-ui/core/Link';
 import NextLink from 'next/link';
 
-const PostCard = ({ classes, data: { title, date, tags, slug, subTitle, thumb }, changeCategory }) => {
+const PostCard = ({ data: { title, date, tags, slug, subTitle, thumb }, changeCategory }) => {
+  const classes = useStyles();
+
   return (
-    <Card elevation={0} className={classes.card}>
+    <Card className={classes.card}>
       <NextLink prefetch href={slug}>
-        <img src={thumb} className={classes.cardActionArea} />
+        <CardMedia className={classes.cover} image={thumb} title={title} />
       </NextLink>
-      <CardContent className={classes.cardContent}>
+      <CardContent className={classes.content}>
         <NextLink href={slug}>
           <Link className={classes.title} variant="h5">
             {title}
@@ -34,9 +37,7 @@ const PostCard = ({ classes, data: { title, date, tags, slug, subTitle, thumb },
             </Grid>
           </Grid>
         </Grid>
-        <Typography className={classes.subTitle} component="p">
-          {subTitle}
-        </Typography>
+        <Typography className={classes.subTitle}>{subTitle}</Typography>
         <NextLink href={slug}>
           <Button color="primary" className={classes.readButton} variant="outlined">
             Read
@@ -47,60 +48,41 @@ const PostCard = ({ classes, data: { title, date, tags, slug, subTitle, thumb },
   );
 };
 
-const styles = theme => ({
-  subTitle: {
-    fontWeight: 300
-  },
+const useStyles = makeStyles(theme => ({
   card: {
-    background: 'none',
+    position: 'relative',
     display: 'flex',
-    width: '100%',
-    marginTop: 40,
-    marginBottom: 60,
-    [theme.breakpoints.down('md')]: {
-      flexDirection: 'column'
-    },
-    [theme.breakpoints.between('md', 'xl')]: {
-      flexDirection: 'column'
-    },
-    [theme.breakpoints.up('xl')]: {
+    flexDirection: 'column',
+    height: 480,
+    [theme.breakpoints.up('lg')]: {
+      height: 240,
       flexDirection: 'row'
     }
   },
-  cardContent: {
-    padding: 4,
-    paddingTop: 0,
-    [theme.breakpoints.only('lg')]: {
-      width: '100%',
-      paddingRight: 2
-    },
-    [theme.breakpoints.up('xl')]: {
-      width: '66.6666666666%'
-    }
-  },
-  cardActionArea: {
+  cover: {
+    width: '100%',
+    height: 240,
+    flexShrink: 0,
     cursor: 'pointer',
     transition: 'opacity 0.6s ease',
     '&:hover': {
       opacity: 0.8
     },
-    [theme.breakpoints.down('md')]: {
-      width: '100%',
-      margin: '16px 0px'
-    },
-    [theme.breakpoints.between('md', 'xl')]: {
-      width: '100%',
-      margin: '16px 0'
-    },
-    [theme.breakpoints.up('xl')]: {
-      width: '33.333333333%',
-      maxHeight: 180,
-      margin: '0 16px'
+    [theme.breakpoints.up('lg')]: {
+      width: 320
     }
   },
+  content: {
+    width: '100%'
+  },
+  subTitle: {
+    fontSize: 18,
+    color: '#5f6368'
+  },
   readButton: {
-    marginTop: 12,
-    float: 'right',
+    position: 'absolute',
+    right: 16,
+    bottom: 16,
     borderRadius: '1px'
   },
   title: {
@@ -124,6 +106,6 @@ const styles = theme => ({
     padding: '8px 0px',
     color: '#999999'
   }
-});
+}));
 
-export default withStyles(styles)(PostCard);
+export default PostCard;

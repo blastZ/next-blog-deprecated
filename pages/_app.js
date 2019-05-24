@@ -1,22 +1,16 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import Head from 'next/head';
-import { MuiThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import JssProvider from 'react-jss/lib/JssProvider';
 
-import getPageContext from '../src/getPageContext';
+import theme from '../src/theme';
 import '../css/index.css';
 
 class MyApp extends App {
-  constructor() {
-    super();
-    this.pageContext = getPageContext();
-  }
-
   componentDidMount() {
     const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles && jssStyles.parentNode) {
+    if (jssStyles) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
   }
@@ -29,12 +23,10 @@ class MyApp extends App {
         <Head>
           <title>Stack Bunch</title>
         </Head>
-        <JssProvider registry={this.pageContext.sheetsRegistry} generateClassName={this.pageContext.generateClassName}>
-          <MuiThemeProvider theme={this.pageContext.theme} sheetsManager={this.pageContext.sheetsManager}>
-            <CssBaseline />
-            <Component pageContext={this.pageContext} {...pageProps} />
-          </MuiThemeProvider>
-        </JssProvider>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
       </Container>
     );
   }

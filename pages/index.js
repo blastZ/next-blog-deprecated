@@ -57,12 +57,14 @@ const MainPage = ({ data = [], classes }) => {
       <Layout>
         <Grid container wrap="nowrap" justify="center">
           <Grid className={classes.left} item>
-            <Grid className={classes.posts} item>
+            <Grid className={classes.posts} item container spacing={8}>
               {posts
                 .filter(o => o.published)
                 .slice(0, 7)
                 .map(({ id, thumb, title, tags, date, subTitle, slug }) => (
-                  <PostCard key={slug} id={id} data={{ thumb, title, tags, slug, date, subTitle }} changeCategory={changeCategory} />
+                  <Grid className={classes.cardContainer} key={slug} item>
+                    <PostCard id={id} data={{ thumb, title, tags, slug, date, subTitle }} changeCategory={changeCategory} />
+                  </Grid>
                 ))}
             </Grid>
             <Divider light />
@@ -82,7 +84,11 @@ const styles = theme => ({
     [theme.breakpoints.up('md')]: {
       width: '75%'
     },
-    padding: '0px 32px'
+    padding: '0px 32px',
+    margin: '48px 0px'
+  },
+  cardContainer: {
+    width: '100%'
   },
   posts: {
     minHeight: 400
