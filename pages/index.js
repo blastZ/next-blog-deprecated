@@ -60,6 +60,7 @@ const MainPage = ({ data = [], classes }) => {
             <Grid className={classes.posts} item container spacing={8}>
               {posts
                 .filter(o => o.published)
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
                 .slice(0, 7)
                 .map(({ id, thumb, title, tags, date, subTitle, slug }) => (
                   <Grid className={classes.cardContainer} key={slug} item>
