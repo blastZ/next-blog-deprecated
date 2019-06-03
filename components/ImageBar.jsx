@@ -1,10 +1,17 @@
 import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 
-const ImageBar = ({ classes, slogan = false, title, height = 464, children }) => {
+const ImageBar = ({ slogan = false, title, height = 464, children }) => {
+  const classes = useStyles({ height });
+
   return (
-    <Grid className={classes.container} style={{ height }} container direction="column" alignItems="center" justify="center" wrap="nowrap">
+    <Grid className={classes.container} container direction="column" alignItems="center" justify="center" wrap="nowrap">
+      <picture>
+        <source srcSet="/static/bg.webp" type="image/webp" />
+        <source srcSet="/static/bg.jpg" type="image/jpeg" />
+        <img className={classes.background} src="/static/bg.jpg" alt="" />
+      </picture>
       {slogan ? <Slogan className={classes.slogan} /> : null}
       <Title className={classes.title} text={title} />
       {children}
@@ -24,21 +31,32 @@ const Title = ({ text, className }) => (
   </Typography>
 );
 
-const styles = () => ({
+const useStyles = makeStyles({
   container: {
     width: '100%',
+    height: props => props.height,
     padding: '56px 16px',
-    background: '#090a0b no-repeat 50%',
-    backgroundImage: `url('/static/bg.webp')`
+    background: '#090a0b',
+    position: 'relative'
+  },
+  background: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    width: '100%',
+    height: props => props.height,
+    objectFit: 'cover'
   },
   slogan: {
     color: '#fff',
-    margin: '16px 0px'
+    margin: '16px 0px',
+    zIndex: 1
   },
   title: {
     color: '#fff',
-    textAlign: 'center'
+    textAlign: 'center',
+    zIndex: 1
   }
 });
 
-export default withStyles(styles)(ImageBar);
+export default ImageBar;
