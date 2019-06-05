@@ -1,0 +1,12 @@
+<svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill='#292740' id="c" d="m0 0h320v240h-320v-240z"/><text fill="#fff" id="b" x="20" y="68" font-size="22" font-weight="700">
+<tspan fill="#cc6c90" dx="0" dy="0">@font-face</tspan>
+<tspan fill="#9ea2b4" dx="0" dy="0">{</tspan>
+<tspan fill="#b89673" dx="-124" dy="40">font-family</tspan>
+<tspan fill="#9ea2b4" dx="0" dy="0">:</tspan>
+<tspan fill="#40b184" dx="0" dy="0">'CoolFont'</tspan>
+<tspan fill="#9ea2b4" dx="0" dy="0">;</tspan>
+<tspan fill="#b89673" dx="-267" dy="40">font-display</tspan>
+<tspan fill="#9ea2b4" dx="0" dy="0">:</tspan>
+<tspan fill="#40b184" dx="0" dy="0">swap</tspan>
+<tspan fill="#9ea2b4" dx="0" dy="0">;</tspan>
+<tspan fill="#9ea2b4" dx="-240" dy="40">}</tspan></text></svg>
