@@ -1,0 +1,54 @@
+## CSR
+
+## Generate CSR
+
+## Generate private key
+
+```bash
+openssl genrsa -des3 -out rootCA.key 4096
+```
+
+# Generate a Self-Signed Certificate
+
+openssl req -x509 -new -nodes -key root.key -sha256 -days 365 -out root.crt
+
+# Generate server key
+
+openssl genrsa -out localhost.key 2048
+
+# create csr config
+
+```bash
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+req_extensions = req_ext
+distinguished_name = dn
+[dn]
+C = HU
+ST = Budapest
+L = Budapest
+O = ACME
+OU = ACME Inc
+emailAddress = localhost@blastz.com
+CN = localhost
+[req_ext]
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = localhost
+```
+
+# Generate server CSR
+
+openssl req -new -config localhost.conf -key localhost.key -out localhost.csr
+
+# Verify the csr's content
+
+openssl req -in localhost.csr -noout -text
+
+# generate server crt
+
+openssl x509 -req -in localhost.csr -CA root.crt -CAkey root.key -CAcreateserial -out localhost.crt -days 365 -sha256 // old chrome 56
+
+openssl x509 -req -in localhost.csr -CA root.crt -CAkey root.key -CAcreateserial -out localhost.crt -days 365 -sha256 -extfile localhost.conf -extensions req_ext // new
