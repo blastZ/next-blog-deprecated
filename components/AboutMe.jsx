@@ -2,14 +2,14 @@ import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
-// import RecentPost from './RecentPosts';
+import RecentPost from './RecentPosts';
 
 const AboutMe = ({ classes }) => {
   return (
     <Grid className={classes.container} container>
-      {/* <Grid className={classes.recentContainer} item xs={12} md={7}>
+      <Grid className={classes.recentContainer} item xs={12} md={7}>
         <RecentPost />
-      </Grid> */}
+      </Grid>
       <Grid className={classes.meContainer} item xs={12} md={5} container direction="column" spacing={2}>
         <Grid item>
           <Typography variant="h6">ABOUT ME</Typography>
