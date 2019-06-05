@@ -1,23 +1,39 @@
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/styles';
 import Link from 'next/link';
 import Divider from '@material-ui/core/Divider';
 
-import posts from '../data/posts';
+const RecentPosts = () => {
+  const classes = useStyles();
 
-const RecentPosts = ({ classes }) => {
   return (
-    <Grid container direction="column" spacing={16}>
+    <Grid container direction="column" spacing={2}>
       <Grid item>
         <Typography variant="h6">RECENT POSTS</Typography>
       </Grid>
-      {posts.slice(0, 3).map((o, index) => (
-        <Grid className={classes.postsContainer} key={o.slug} item container alignItems="center" wrap="nowrap">
+      {[
+        {
+          slug: '/posts/http2-best-practices',
+          date: '2019/06/05',
+          title: 'HTTP2 最佳实践'
+        },
+        {
+          slug: '/posts/ecmascript-standard',
+          date: '2019/05/15',
+          title: 'ECMAScript 标准'
+        },
+        {
+          slug: '/posts/three-ways-to-remove-array-duplicates',
+          date: '2019/03/12',
+          title: '数组去重的三种方式'
+        }
+      ].map((o, index) => (
+        <Grid key={o.slug} item container alignItems="center" wrap="nowrap">
           <Grid className={classes.index} item />
-          <Grid item>
+          <Grid className={classes.postA} item>
             <Link href={o.slug}>
-              <a>{`${o.date} ${o.title}`}</a>
+              <a className={classes.postA}>{`${o.date} ${o.title}`}</a>
             </Link>
           </Grid>
           {index !== 2 && <Divider className={classes.divider} />}
@@ -27,7 +43,7 @@ const RecentPosts = ({ classes }) => {
   );
 };
 
-const styles = theme => ({
+const useStyles = makeStyles({
   index: {
     width: 10,
     height: 10,
@@ -39,7 +55,13 @@ const styles = theme => ({
   divider: {
     maxWidth: 360
   },
-  postsContainer: {}
+  postA: {
+    color: 'rgba(0,150,136,1) !important',
+    transition: 'transform 300ms ease',
+    '&:hover': {
+      transform: 'scale(1.05)'
+    }
+  }
 });
 
-export default withStyles(styles)(RecentPosts);
+export default RecentPosts;

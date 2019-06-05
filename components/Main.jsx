@@ -7,10 +7,10 @@ const Main = ({ children, classes }) => {
       className={classes.container}
       style={{
         margin: '0 auto',
-        paddingTop: 8,
-      }}
-    >
+        paddingTop: 8
+      }}>
       {children}
+      <div className={classes.commentsContainer} />
     </div>
   );
 };
@@ -18,18 +18,21 @@ const Main = ({ children, classes }) => {
 const styles = theme => ({
   container: {
     [theme.breakpoints.down('md')]: {
-      maxWidth: 650,
+      maxWidth: 650
     },
     [theme.breakpoints.between('md', 'lg')]: {
-      maxWidth: 750,
+      maxWidth: 750
     },
     [theme.breakpoints.between('lg', 'xl')]: {
-      maxWidth: 970,
+      maxWidth: 970
     },
     [theme.breakpoints.up('xl')]: {
-      maxWidth: 1170,
-    },
+      maxWidth: 1170
+    }
   },
+  commentsContainer: {
+    height: 128
+  }
 });
 
 export default withStyles(styles)(Main);

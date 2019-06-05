@@ -64,7 +64,7 @@ const Post = ({ frontMatter, classes, children }) => {
           <h1 className={classes.title}>{title}</h1>
           <h4 className={classes.subTitle}>
             <span className={classes.date}>{`${date} - `}</span>
-            <a className={classes.editLink} href={`https://github.com/blastZ/next-blog/blob/master/pages/posts${slug}.mdx`}>
+            <a className={classes.editLink} target="_blank" href={`https://github.com/blastZ/next-blog/blob/master/pages${slug}.mdx`}>
               EDIT THIS POST ON GITHUB
             </a>
           </h4>
