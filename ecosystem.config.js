@@ -15,6 +15,7 @@ module.exports = {
     production: {
       user: 'root',
       host: ['104.248.210.212'],
+      ssh_options: 'ProxyCommand=nc -X connect -x 127.0.0.1:41081 %h %p',
       ref: 'origin/master',
       repo: 'git@github.com:blastZ/next-blog.git',
       path: '/home/blog',
