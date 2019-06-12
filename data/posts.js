@@ -1,4 +1,5 @@
 export default [
+  require('../pages/posts/ssh-detail.mdx').frontMatter,
   require('../pages/posts/http2-best-practices.mdx').frontMatter,
   require('../pages/posts/font-face.mdx').frontMatter,
   require('../pages/posts/three-ways-to-remove-array-duplicates.mdx').frontMatter,
