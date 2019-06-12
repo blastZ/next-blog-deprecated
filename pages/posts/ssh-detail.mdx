@@ -1,0 +1,77 @@
+import usePost from '../../hooks/usePost';
+
+export const frontMatter = {
+  slug: '/posts/ssh-detail',
+  title: 'SSH 详解',
+  subTitle: '从证书生产到 nginx 配置，完整实现 http2。',
+  tags: ['tcp/ip'],
+  date: '2019/06/05',
+  thumb: '/static/thumbs/http2-best-practices.svg',
+  published: true
+};
+
+export default usePost(frontMatter);
+
+# SSH 详解
+
+我们经常会使用 SSH 来链接远程服务器基本命令如下：
+
+```bash
+ssh user@host
+```
+
+对于使用密令的登陆，过程分为以下几步：
+
+1. 客户端向服务器发起 ssh 请求。
+2. 服务器向客户端发送对应类型的公钥。
+3. 客户端使用服务器提供的公钥加密登陆密码，发送给服务器。
+4. 服务器通过私钥解密，验证密码，正确即同意登陆。
+
+我们知道在 HTTPS 协议下，为了应对“中间人攻击”（Man-in-the-middle attack），服务器会向客户端提供证书来验证自己的身份。但 SSH 协议并不存在证书，这会带来风险。
+
+所以当你第一次登陆远程服务器时，会出现以下这条经常被忽略的提示：
+
+```bash
+The authenticity of host '159.65.9.118 (159.65.9.118)' can't be established.
+ECDSA key fingerprint is SHA256:iTuve8WMU2oKqEyLkM4Y56T+l1aueJePrbHK/w7kVDI.
+Are you sure you want to continue connecting (yes/no)?
+```
+
+表示无法确认远程主机的真实性，然后提供了该服务器公钥的指纹签名，上面的提示使用了 sha256 签名算法，并询问你是否继续连接。
+
+服务器的公钥一般保存在 `/etc/ssh` 下，大多数云服务器会内置适用于各个 `OpenSSH` 版本的公钥。一般包含以下四种：
+
+- ssh_host_rsa_key.pub
+- ssh_host_dsa_key.pub
+- ssh_host_ecdsa_key.pub
+- ssh_host_ed25519_key.pub
+
+这四种类型也是 `ssh-keygen` 能够生成的四种非对称密钥对的类型。
+
+至于如何去确认上面指纹的正确性，只能人工确认。一般分两种情况：
+
+1. 能够直接登陆服务器的，只需要到 `/etc/ssh` 目录下确认主机公钥即可。
+2. 无法直接登陆服务器的，只能通过远程主机公开的密钥来确认了。
+
+一旦选择 yes，就会给出以下警告：
+
+```bash
+Warning: Permanently added '159.65.9.118' (ECDSA) to the list of known hosts.
+```
+
+这表示主机的公钥信息已保存到客户端的 `~/.ssh/known_hosts` 下，下次登陆就不会再询问了。但是如果远程主机给出的指纹和本地保存的指纹不相同,
+此时会再次给出新的指纹，并询问是否继续连接。如果选择 yes，那么新的主机信息会加入到 `known_hosts` 下，这会导致 `known_hosts` 下存在两条同一个 IP 的指纹信息。
+
+Mac 和 Linux 的存储稍有不同，Mac 下主机 ip 为明文，linux 下主机 ip 会做哈希后再保存，如下：
+
+```bash
+# Mac
+159.65.9.118 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKGFHJRd3MZaUA0FYOlLsNMrNDz1aACZRQw8xZhp1mzAvFKxwDCRooIbsfZ7soZRMQAXUDQGj8nIbfq2cjgNnPQ=
+
+# Linux
+
+```
+
+注意到远程服务器向我们提供的是 `ecdsa` 的公钥，一般使用最多的是 `rsa` 算法产生的公钥，但其实安全和性能最好的是 `ed25519` 算法产生的公私钥对。
+
+值得注意的是每个用户都有自己的 `known_hosts` 所以上面所提到的所有地址的一级目录都是 `~` 家目录。系统也有适用于全局的 `known_hosts` 通常位于 `/etc/ssh` 下。

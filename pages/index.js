@@ -21,6 +21,10 @@ const MainPage = ({ data = [], classes }) => {
         num: 5
       },
       {
+        name: 'linux',
+        num: 2
+      },
+      {
         name: 'react',
         num: 1
       },
