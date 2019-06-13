@@ -14,6 +14,11 @@ const RecentPosts = () => {
       </Grid>
       {[
         {
+          slug: '/posts/ssh-detail',
+          date: '2019/06/14',
+          title: 'SSH 详解'
+        },
+        {
           slug: '/posts/http2-best-practices',
           date: '2019/06/05',
           title: 'HTTP2 最佳实践'
@@ -22,11 +27,6 @@ const RecentPosts = () => {
           slug: '/posts/ecmascript-standard',
           date: '2019/05/15',
           title: 'ECMAScript 标准'
-        },
-        {
-          slug: '/posts/three-ways-to-remove-array-duplicates',
-          date: '2019/03/12',
-          title: '数组去重的三种方式'
         }
       ].map((o, index) => (
         <Grid key={o.slug} item container alignItems="center" wrap="nowrap">
