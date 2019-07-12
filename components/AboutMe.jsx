@@ -17,9 +17,18 @@ const AboutMe = ({ classes }) => {
         <Grid item container spacing={2}>
           <Grid item xs={3}>
             <picture>
-              <source srcSet="/static/avatar.webp" type="image/web" />
-              <source srcSet="/static/avatar.jpg" type="image/jpeg" />
-              <img src="/static/avatar.webp" alt="avatars" />
+              <source
+                srcSet="https://res.cloudinary.com/stackbunch/image/upload/c_scale,q_auto/v1562934532/blog-assets/avatar_j7ixf0.webp"
+                type="image/webp"
+              />
+              <source
+                srcSet="https://res.cloudinary.com/stackbunch/image/upload/c_scale,q_auto/v1562934532/blog-assets/avatar_j7ixf0.jpg"
+                type="image/jpeg"
+              />
+              <img
+                src="https://res.cloudinary.com/stackbunch/image/upload/c_scale,q_auto/v1562934532/blog-assets/avatar_j7ixf0.jpg"
+                alt="avatars"
+              />
             </picture>
           </Grid>
           <Grid item xs={9}>
