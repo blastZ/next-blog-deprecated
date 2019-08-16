@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
@@ -8,53 +8,14 @@ import PostCard from '../components/PostCard';
 import Category from '../components/Category';
 import PageButton from '../components/PageButton';
 import posts from '../data/posts';
+import categoryList from '../data/category';
 
-const MainPage = ({ data = [], classes }) => {
-  const [categoryList, setCategoryList] = useState([]);
+const MainPage = ({ classes }) => {
   const [category, setCategory] = useState('all');
 
-  // set category list
-  useEffect(() => {
-    const list = [
-      {
-        name: 'all',
-        num: 5
-      },
-      {
-        name: 'linux',
-        num: 2
-      },
-      {
-        name: 'react',
-        num: 1
-      },
-      {
-        name: 'node',
-        num: 2
-      },
-      {
-        name: 'javascript',
-        num: 4
-      },
-      {
-        name: 'd3',
-        num: 2
-      }
-    ];
-
-    setCategoryList(list);
+  const changeCategory = useCallback(category => {
+    setCategory(category);
   }, []);
-
-  // change category
-  // useEffect(() => {
-  //   if (category === 'all') {
-  //     setPosts([]);
-  //   } else {
-  //     setPosts([]);
-  //   }
-  // }, [category]);
-
-  const changeCategory = category => {};
 
   return (
     <>
@@ -63,7 +24,7 @@ const MainPage = ({ data = [], classes }) => {
           <Grid className={classes.left} item>
             <Grid className={classes.posts} item container spacing={8}>
               {posts
-                .filter(o => o.published)
+                .filter(o => o.published && ((category !== 'all' && o.tags.includes(category)) || category === 'all'))
                 .sort((a, b) => new Date(b.date) - new Date(a.date))
                 .slice(0, 7)
                 .map(({ id, thumb, title, tags, date, subTitle, slug }) => (
