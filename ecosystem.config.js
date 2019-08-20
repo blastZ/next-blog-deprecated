@@ -14,11 +14,12 @@ module.exports = {
   deploy: {
     production: {
       user: 'root',
-      host: ['159.65.9.118'],
+      host: ['178.128.52.85'],
       ref: 'origin/master',
       repo: 'git@github.com:blastZ/next-blog.git',
       path: '/home/blog',
-      'post-deploy': 'npm install && npm run build && pm2 startOrRestart ecosystem.config.js --env production'
+      'post-deploy':
+        'cp ./deploy/stackbunch.conf /etc/nginx/conf.d && nginx -s reload && npm install && npm run build && pm2 startOrRestart ecosystem.config.js --env production'
     }
   }
 };
