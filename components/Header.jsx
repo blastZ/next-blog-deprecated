@@ -1,12 +1,14 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Router from 'next/router';
 
-const Header = ({ classes }) => {
+const Header = () => {
+  const classes = useStyles();
+
   return (
     <div className={classes.root}>
       <AppBar elevation={1} className={classes.appBar} position="fixed">
@@ -26,21 +28,23 @@ const Header = ({ classes }) => {
             }}>
             BLOG
           </LinkButton>
-          <LinkButton>CASE</LinkButton>
-          <LinkButton primary={true}>ABOUT</LinkButton>
+          <LinkButton disabled>CASE</LinkButton>
+          <LinkButton primary={true} disabled>
+            ABOUT
+          </LinkButton>
         </Toolbar>
       </AppBar>
     </div>
   );
 };
 
-const LinkButton = ({ children, primary = null, onClick }) => (
-  <Button onClick={onClick} color={primary ? 'primary' : 'default'}>
+const LinkButton = ({ children, primary = null, onClick, disabled = false }) => (
+  <Button onClick={onClick} color={primary ? 'primary' : 'default'} disabled={disabled}>
     {children}
   </Button>
 );
 
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
   },
@@ -67,6 +71,6 @@ const styles = theme => ({
     marginLeft: -12,
     marginRight: 20
   }
-});
+}));
 
-export default withStyles(styles)(Header);
+export default Header;

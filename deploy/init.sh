@@ -20,3 +20,14 @@ nginx -t
 # install net-tools
 yum -y install net-tools
 netstat -ntlp
+
+# install ufw
+yum -y install ufw
+ufw enable
+ufw status
+ufw allow SSH
+ufw allow http
+ufw allow https
+
+# allow http proxy on SELinux
+/usr/sbin/setsebool httpd_can_network_connect true
