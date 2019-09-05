@@ -29,6 +29,26 @@ const MainPage = ({ classes }) => {
 
   return (
     <>
+      <picture>
+        <img
+          style={{
+            width: '100vw',
+            height: '100vh',
+            objectFit: 'cover',
+            objectPosition: ''
+          }}
+          src="https://www.robinwieruch.de/static/f583d102f9ec5ef5d1a50e3f5d99288a/426ce/cover.jpg"
+        />
+      </picture>
+      <div
+        style={{
+          position: 'absolute',
+          right: 0,
+          bottom: 0,
+          left: 0,
+          top: 0,
+          background: 'rgba(0,0,0,0.5)'
+        }}></div>
       <Layout>
         <Grid container wrap="nowrap" justify="center">
           <Grid className={classes.left} item>
