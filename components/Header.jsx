@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -6,8 +6,26 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Router from 'next/router';
 
+import { useScrollPosition } from '../hooks/useScrollPosition';
+
 const Header = () => {
-  const classes = useStyles();
+  const [hide, setHide] = useState(true);
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const show = currPos.y < -(window.innerHeight - 56);
+      show ? setHide(false) : setHide(true);
+    },
+    [hide]
+  );
+
+  const classes = useStyles({
+    hide
+  });
+
+  useEffect(() => {
+    console.log(hide);
+  }, [hide]);
 
   return (
     <div className={classes.root}>
@@ -15,7 +33,7 @@ const Header = () => {
         <Toolbar className={classes.toolBar}>
           <Typography
             style={{
-              color: '#000'
+              color: hide ? '#fff' : '#000'
             }}
             variant="h6"
             color="inherit"
@@ -56,9 +74,10 @@ const useStyles = makeStyles(theme => ({
     marginRight: 20
   },
   appBar: {
-    background: 'rgba(255,255,255,1)',
-    opacity: 0.98,
-    color: '#555'
+    background: ({ hide }) => (hide ? 'rgba(0,0,0,0)' : 'rgba(255,255,255, 0.98)'),
+    boxShadow: ({ hide }) =>
+      hide ? 'none' : '0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12)',
+    color: ({ hide }) => (hide ? '#fff' : '#555')
   },
   toolBar: {
     [theme.breakpoints.up('xxl')]: {
