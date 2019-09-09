@@ -88,7 +88,7 @@ const styles = theme => ({
       width: '66.66666667%',
       marginLeft: '16.66666667%'
     },
-    marginTop: 40
+    marginTop: 96
   },
   title: {
     textAlign: 'center'

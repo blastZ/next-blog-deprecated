@@ -14,7 +14,7 @@ const PostCard = ({ data: { title, date, tags, slug, subTitle, thumb }, changeCa
 
   return (
     <Card className={classes.card}>
-      <NextLink prefetch href={slug}>
+      <NextLink href={slug}>
         <CardMedia className={classes.cover} image={thumb} title={title} />
       </NextLink>
       <CardContent className={classes.content}>
