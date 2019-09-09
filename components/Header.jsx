@@ -1,53 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Router from 'next/router';
-
-import { useScrollPosition } from '../hooks/useScrollPosition';
+import { useRouter } from 'next/router';
 
 const Header = () => {
-  const [hide, setHide] = useState(true);
-
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      const show = currPos.y < -(window.innerHeight - 56);
-      show ? setHide(false) : setHide(true);
-    },
-    [hide]
-  );
-
+  const router = useRouter();
+  const isIndex = router.route === '/';
   const classes = useStyles({
-    hide
+    isIndex
   });
 
-  useEffect(() => {
-    console.log(hide);
-  }, [hide]);
+  const handleClick = useCallback(() => {
+    router.push('/');
+  }, []);
 
   return (
     <div className={classes.root}>
       <AppBar elevation={1} className={classes.appBar} position="fixed">
         <Toolbar className={classes.toolBar}>
-          <Typography
-            style={{
-              color: hide ? '#fff' : '#000'
-            }}
-            variant="h6"
-            color="inherit"
-            className={classes.grow}>
+          <Typography variant="h6" color="inherit" className={classes.grow}>
             StackBunch
           </Typography>
-          <LinkButton
-            onClick={() => {
-              Router.push('/');
-            }}>
+          <LinkButton isIndex={isIndex} onClick={handleClick}>
             BLOG
           </LinkButton>
-          <LinkButton disabled>CASE</LinkButton>
-          <LinkButton primary={true} disabled>
+          <LinkButton isIndex={isIndex} disabled>
+            CASE
+          </LinkButton>
+          <LinkButton isIndex={isIndex} primary={true} disabled>
             ABOUT
           </LinkButton>
         </Toolbar>
@@ -56,8 +39,8 @@ const Header = () => {
   );
 };
 
-const LinkButton = ({ children, primary = null, onClick, disabled = false }) => (
-  <Button onClick={onClick} color={primary ? 'primary' : 'default'} disabled={disabled}>
+const LinkButton = ({ children, primary = null, onClick, disabled = false, isIndex }) => (
+  <Button style={{ color: isIndex ? '#fff' : '' }} onClick={onClick} color={primary ? 'primary' : 'default'} disabled={disabled}>
     {children}
   </Button>
 );
@@ -67,17 +50,19 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   grow: {
-    flexGrow: 1
+    flexGrow: 1,
+    color: ({ isIndex }) => (isIndex ? '#fff' : '#000')
   },
   menuButton: {
     marginLeft: -12,
     marginRight: 20
   },
   appBar: {
-    background: ({ hide }) => (hide ? 'rgba(0,0,0,0)' : 'rgba(255,255,255, 0.98)'),
-    boxShadow: ({ hide }) =>
-      hide ? 'none' : '0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12)',
-    color: ({ hide }) => (hide ? '#fff' : '#555')
+    paddingTop: ({ isIndex }) => (isIndex ? 16 : ''),
+    background: ({ isIndex }) => (isIndex ? 'rgba(0,0,0,0)' : 'rgba(255,255,255,1)'),
+    boxShadow: ({ isIndex }) =>
+      isIndex ? 'none' : '0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12)',
+    color: ({ isIndex }) => (isIndex ? '#fff' : '#000')
   },
   toolBar: {
     [theme.breakpoints.up('xxl')]: {
