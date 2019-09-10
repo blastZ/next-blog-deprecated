@@ -17,11 +17,15 @@ const Layout = ({ children }) => {
       <Header siteTitle={'Stack Bunch'} />
       {!isIndex && <ImageBar title="Share Everything, Front-End, Back-End, Data Visualization, Linux." slogan />}
       <Main>{children}</Main>
-      <ImageBar title="Never miss an article from stack-bunch." height={360}>
-        <Subscribe />
-      </ImageBar>
-      <AboutMe />
-      <Footer />
+      {!isIndex && (
+        <>
+          <ImageBar title="Never miss an article from stack-bunch." height={360}>
+            <Subscribe />
+          </ImageBar>
+          <AboutMe />
+          <Footer />
+        </>
+      )}
     </>
   );
 };
