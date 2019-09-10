@@ -45,7 +45,7 @@ const Container = props => {
 
 const useStyles = makeStyles({
   '@global': {
-    html: {
+    'html, body': {
       overflow: ({ isIndex }) => (isIndex ? 'hidden' : 'auto')
     }
   }
