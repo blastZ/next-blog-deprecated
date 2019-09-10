@@ -46,6 +46,8 @@ const Container = props => {
 const useStyles = makeStyles({
   '@global': {
     'html, body': {
+      position: 'relative',
+      height: '100%',
       overflow: ({ isIndex }) => (isIndex ? 'hidden' : 'auto')
     }
   }
