@@ -97,7 +97,7 @@ const MainPage = ({ classes }) => {
       <Layout>
         <Grid style={{ marginTop: 64 }} container wrap="nowrap" justify="center">
           <Grid className={classes.left} item container>
-            <Grid item container direction="column" spacing={6}>
+            <Grid item container direction="column" wrap="nowrap" spacing={6}>
               {showPosts.map(({ id, thumb, title, tags, date, subTitle, slug }) => (
                 <Grid className={classes.cardContainer} key={slug} item>
                   <PostCard id={id} data={{ thumb, title, tags, slug, date, subTitle }} changeCategory={changeCategory} />
