@@ -43,14 +43,6 @@ const Container = props => {
   return <div>{props.children}</div>;
 };
 
-const useStyles = makeStyles({
-  '@global': {
-    'html, body': {
-      position: 'relative',
-      height: '100%',
-      overflow: ({ isIndex }) => (isIndex ? 'hidden' : 'auto')
-    }
-  }
-});
+const useStyles = makeStyles({});
 
 export default MyApp;

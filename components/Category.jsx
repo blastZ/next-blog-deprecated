@@ -23,7 +23,7 @@ const Category = ({ classes, categoryList, changeCategory }) => {
 
 const styles = theme => ({
   listItemText: {
-    color: '#fff'
+    color: '#009688'
   }
 });
 

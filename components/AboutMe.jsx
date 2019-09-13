@@ -1,10 +1,12 @@
 import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 import RecentPost from './RecentPosts';
 
-const AboutMe = ({ classes }) => {
+export default () => {
+  const classes = useStyles();
+
   return (
     <Grid className={classes.container} container>
       <Grid className={classes.recentContainer} item xs={12} md={7}>
@@ -42,7 +44,7 @@ const AboutMe = ({ classes }) => {
   );
 };
 
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   container: {
     paddingLeft: 32,
     paddingRight: 32,
@@ -50,8 +52,8 @@ const styles = theme => ({
     margin: '0 auto'
   },
   recentContainer: {
-    paddingTop: 56,
-    paddingBottom: 56,
+    paddingTop: 48,
+    paddingBottom: 48,
     [theme.breakpoints.down('md')]: {
       display: 'none'
     },
@@ -60,9 +62,7 @@ const styles = theme => ({
     }
   },
   meContainer: {
-    paddingTop: 56,
-    paddingBottom: 56
+    paddingTop: 48,
+    paddingBottom: 48
   }
-});
-
-export default withStyles(styles)(AboutMe);
+}));

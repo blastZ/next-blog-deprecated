@@ -1,21 +1,12 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-const Main = ({ children, classes }) => {
-  return (
-    <div
-      className={classes.container}
-      style={{
-        margin: '0 auto',
-        paddingTop: 8
-      }}>
-      {children}
-      <div className={classes.commentsContainer} />
-    </div>
-  );
+export default ({ children }) => {
+  const classes = useStyles();
+
+  return <div className={classes.container}>{children}</div>;
 };
 
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   container: {
     [theme.breakpoints.down('md')]: {
       maxWidth: 650
@@ -28,11 +19,8 @@ const styles = theme => ({
     },
     [theme.breakpoints.up('xl')]: {
       maxWidth: 1170
-    }
-  },
-  commentsContainer: {
-    height: 128
+    },
+    margin: '0 auto',
+    paddingTop: 48
   }
-});
-
-export default withStyles(styles)(Main);
+}));
