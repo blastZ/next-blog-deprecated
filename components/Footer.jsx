@@ -1,20 +1,16 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Link from 'next/link';
+import { makeStyles } from '@material-ui/core/styles';
 
 import GithubIcon from './icons/Github';
 
-const Footer = ({ classes }) => {
+export default () => {
+  const classes = useStyles();
+
   return (
     <Grid className={classes.container} container alignItems="center" justify="center">
       <Grid className={classes.contentContainer} container alignItems="center" justify="center">
         <Grid className={classes.links} container alignItems="center" justify="center">
-          {/* <Typography className={classes.owner} variant="subtitle2" gutterBottom>
-            © 2018 blastz, forever.
-          </Typography> */}
           <a style={{ display: 'flex' }} href="https://github.com/blastZ" target="_blank">
             <GithubIcon />
           </a>
@@ -24,10 +20,8 @@ const Footer = ({ classes }) => {
   );
 };
 
-const styles = theme => ({
-  container: {},
+const useStyles = makeStyles(theme => ({
   contentContainer: {
-    background: '#000',
     padding: '24px 8px'
   },
   links: {
@@ -55,6 +49,4 @@ const styles = theme => ({
     visibility: 'hidden',
     background: 'rgba(255,255,255,0.1) !important'
   }
-});
-
-export default withStyles(styles)(Footer);
+}));

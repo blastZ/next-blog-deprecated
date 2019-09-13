@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { MDXProvider } from '@mdx-js/react';
 
 import Highlight from './Highlight';
@@ -52,7 +52,9 @@ const components = {
   h1: Title
 };
 
-const Post = ({ frontMatter, classes, children }) => {
+export default ({ frontMatter, children }) => {
+  const classes = useStyles();
+
   if (!frontMatter) return <div>No Such File</div>;
 
   const { title, date, slug } = frontMatter;
@@ -75,7 +77,7 @@ const Post = ({ frontMatter, classes, children }) => {
   );
 };
 
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   container: {
     [theme.breakpoints.down('md')]: {
       paddingLeft: 20,
@@ -113,6 +115,4 @@ const styles = theme => ({
     marginTop: 64,
     wordWrap: 'break-word'
   }
-});
-
-export default withStyles(styles)(Post);
+}));

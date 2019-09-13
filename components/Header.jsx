@@ -40,7 +40,7 @@ const Header = () => {
 };
 
 const LinkButton = ({ children, primary = null, onClick, disabled = false, isIndex }) => (
-  <Button style={{ color: isIndex ? '#fff' : '' }} onClick={onClick} color={primary ? 'primary' : 'default'} disabled={disabled}>
+  <Button onClick={onClick} color={primary ? 'primary' : 'default'} disabled={disabled}>
     {children}
   </Button>
 );
@@ -50,19 +50,16 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   grow: {
-    flexGrow: 1,
-    color: ({ isIndex }) => (isIndex ? '#fff' : '#000')
+    flexGrow: 1
   },
   menuButton: {
     marginLeft: -12,
     marginRight: 20
   },
   appBar: {
-    paddingTop: ({ isIndex }) => (isIndex ? 16 : ''),
-    background: ({ isIndex }) => (isIndex ? 'rgba(0,0,0,0)' : 'rgba(255,255,255,1)'),
-    boxShadow: ({ isIndex }) =>
-      isIndex ? 'none' : '0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12)',
-    color: ({ isIndex }) => (isIndex ? '#fff' : '#000')
+    background: 'rgba(255,255,255,1)',
+    opacity: 0.98,
+    color: '#555'
   },
   toolBar: {
     [theme.breakpoints.up('xxl')]: {
