@@ -2,23 +2,38 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
+import Fab from '@material-ui/core/Fab';
+import CategoryIcon from '@material-ui/icons/Category';
 
 import Layout from '../components/Layout';
 import PostCard from '../components/PostCard';
 import PageButton from '../components/PageButton';
 import posts from '../data/posts';
 import Typography from '@material-ui/core/Typography';
+import Category from '../components/Category';
 
 export default () => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
   const [category, setCategory] = useState('all');
   const [page, setPage] = useState(0);
   const pageSize = 7;
 
-  const changeCategory = useCallback(category => {
-    setCategory(category);
-    window.scrollTo(0, 0);
-  }, []);
+  const openCategory = useCallback(() => {
+    setOpen(true);
+  }, [setOpen]);
+
+  const closeCategory = useCallback(() => {
+    setOpen(false);
+  }, [setOpen]);
+
+  const changeCategory = useCallback(
+    category => () => {
+      setCategory(category);
+      window.scrollTo(0, 0);
+    },
+    [setCategory]
+  );
 
   const showPosts = useMemo(() => {
     return posts
@@ -49,6 +64,10 @@ export default () => {
             <PageButton page={page} pageSize={pageSize} length={showPosts.length} />
           </Grid>
         </Grid>
+        <Fab onClick={openCategory} variant="extended" aria-label="delete" className={classes.category}>
+          <CategoryIcon />
+        </Fab>
+        <Category open={open} onClose={closeCategory} changeCategory={changeCategory} />
       </Layout>
     </>
   );
@@ -69,5 +88,12 @@ const useStyles = makeStyles(theme => ({
   },
   cardContainer: {
     width: '100%'
+  },
+  category: {
+    position: 'fixed',
+    bottom: 56,
+    right: -24,
+    paddingRight: 40,
+    paddingLeft: 24
   }
 }));
