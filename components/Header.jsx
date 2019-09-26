@@ -59,7 +59,8 @@ const useStyles = makeStyles(theme => ({
   appBar: {
     background: 'rgba(255,255,255,1)',
     opacity: 0.98,
-    color: '#555'
+    color: '#555',
+    paddingRight: `0px !important`
   },
   toolBar: {
     [theme.breakpoints.up('xxl')]: {
