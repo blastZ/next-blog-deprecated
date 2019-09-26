@@ -94,6 +94,10 @@ const useStyles = makeStyles(theme => ({
     bottom: 56,
     right: -24,
     paddingRight: 40,
-    paddingLeft: 24
+    paddingLeft: 24,
+    backgroundColor: 'rgba(255,255,255,0.8)',
+    '& svg': {
+      color: '#009688'
+    }
   }
 }));
