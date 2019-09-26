@@ -24,7 +24,7 @@ const Header = () => {
           <Typography variant="h6" color="inherit" className={classes.grow}>
             StackBunch
           </Typography>
-          <LinkButton isIndex={isIndex} onClick={handleClick}>
+          <LinkButton primary isIndex={isIndex} onClick={handleClick}>
             BLOG
           </LinkButton>
           <LinkButton isIndex={isIndex} disabled>

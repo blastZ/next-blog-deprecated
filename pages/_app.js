@@ -6,7 +6,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { useRouter } from 'next/router';
 
 import theme from '../src/theme';
-import '../css/index.css';
 
 class MyApp extends App {
   componentDidMount() {
@@ -43,6 +42,24 @@ const Container = props => {
   return <div>{props.children}</div>;
 };
 
-const useStyles = makeStyles({});
+const useStyles = makeStyles({
+  '@global': {
+    'html, body': {
+      // scrollBehavior: 'smooth',
+      overflowX: 'hidden',
+      margin: 0,
+      paddingRight: '0px !important'
+    },
+    '*': {
+      fontFamily: `'Ali-Regular', 'sans-serif'`
+    },
+    '@font-face': {
+      fontFamily: 'Ali-Regular',
+      src: `local('Alibaba-PuHuiTi-Regular'),
+        url('https://res.cloudinary.com/stackbunch/raw/upload/v1565955456/blog-assets/Alibaba-PuHuiTi-Regular_dp8dam.woff2')`,
+      fontDisplay: 'swap'
+    }
+  }
+});
 
 export default MyApp;
