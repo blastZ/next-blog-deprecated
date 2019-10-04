@@ -2,10 +2,9 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider, makeStyles } from '@material-ui/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { useRouter } from 'next/router';
 
 import theme from '../src/theme';
+import Progress from '../components/Progress';
 
 class MyApp extends App {
   componentDidMount() {
@@ -24,7 +23,7 @@ class MyApp extends App {
           <title>Stack Bunch</title>
         </Head>
         <ThemeProvider theme={theme}>
-          <CssBaseline />
+          <Progress />
           <Container>
             <Component {...pageProps} />
           </Container>
@@ -35,9 +34,7 @@ class MyApp extends App {
 }
 
 const Container = props => {
-  const router = useRouter();
-  const isIndex = router.route === '/';
-  const classes = useStyles({ isIndex });
+  const classes = useStyles();
 
   return <div>{props.children}</div>;
 };
