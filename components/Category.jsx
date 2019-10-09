@@ -4,6 +4,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Drawer from '@material-ui/core/Drawer';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const categories = [
   {
@@ -24,34 +26,26 @@ const categories = [
   }
 ];
 
-export default ({ open, onClose, changeCategory }) => {
+export default ({ anchorEle, handleClose, changeCategory }) => {
   const classes = useStyles();
 
+  const handleChange = category => () => {
+    changeCategory(category);
+    handleClose();
+  };
+
   return (
-    <Drawer
-      classes={{
-        paper: classes.paper
-      }}
-      anchor="right"
-      open={open}
-      onClose={onClose}>
-      <List>
-        {categories.map((category, index) => (
-          <ListItem onClick={changeCategory(category.name)} button key={category.name}>
-            <ListItemText className={classes.listItemText} primary={`${category.name}(${category.num})`} />
-          </ListItem>
-        ))}
-      </List>
-    </Drawer>
+    <Menu id="simple-menu" anchorEl={anchorEle} keepMounted open={Boolean(anchorEle)} onClose={handleClose}>
+      {categories.map(o => (
+        <MenuItem className={classes.text} key={o.name} onClick={handleChange(o.name)}>{`${o.name}(${o.num})`}</MenuItem>
+      ))}
+    </Menu>
   );
 };
 
 const useStyles = makeStyles(theme => ({
-  listItemText: {
+  text: {
     color: '#009688',
     textAlign: 'center'
-  },
-  paper: {
-    minWidth: 200
   }
 }));

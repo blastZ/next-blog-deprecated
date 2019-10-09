@@ -13,22 +13,28 @@ import Typography from '@material-ui/core/Typography';
 import Category from '../components/Category';
 
 export default () => {
-  const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [categoryButtonAnchor, setCategoryButtonAnchor] = useState(null);
   const [category, setCategory] = useState('all');
   const [page, setPage] = useState(0);
   const pageSize = 7;
+  const classes = useStyles({
+    showCategoryButton: Boolean(!categoryButtonAnchor)
+  });
 
-  const openCategory = useCallback(() => {
-    setOpen(true);
-  }, [setOpen]);
+  const openCategoryMenu = useCallback(
+    e => {
+      console.log(e.currentTarget);
+      setCategoryButtonAnchor(e.currentTarget);
+    },
+    [setCategoryButtonAnchor]
+  );
 
-  const closeCategory = useCallback(() => {
-    setOpen(false);
-  }, [setOpen]);
+  const closeCategoryMenu = useCallback(() => {
+    setCategoryButtonAnchor(null);
+  }, []);
 
   const changeCategory = useCallback(
-    category => () => {
+    category => {
       setCategory(category);
       window.scrollTo(0, 0);
     },
@@ -64,10 +70,10 @@ export default () => {
             <PageButton page={page} pageSize={pageSize} length={showPosts.length} />
           </Grid>
         </Grid>
-        <Fab onClick={openCategory} variant="extended" aria-label="delete" className={classes.category}>
+        <Fab onClick={openCategoryMenu} variant="extended" aria-label="delete" className={classes.category}>
           <CategoryIcon />
         </Fab>
-        <Category open={open} onClose={closeCategory} changeCategory={changeCategory} />
+        <Category handleClose={closeCategoryMenu} anchorEle={categoryButtonAnchor} changeCategory={changeCategory} />
       </Layout>
     </>
   );
@@ -90,6 +96,8 @@ const useStyles = makeStyles(theme => ({
     width: '100%'
   },
   category: {
+    opacity: ({ showCategoryButton }) => (showCategoryButton ? '1' : '0'),
+    transition: 'opacity 284ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 189ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
     position: 'fixed',
     bottom: 56,
     right: -24,
