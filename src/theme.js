@@ -21,7 +21,6 @@ const theme = createMuiTheme({
     color: '#555'
   },
   typography: {
-    fontFamily: ['Ali-Regular', '-apple-system', 'Microsoft YaHei', 'sans-serif'],
     useNextVariants: true
   }
 });

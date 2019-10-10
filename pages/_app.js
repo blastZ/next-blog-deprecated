@@ -48,14 +48,14 @@ const useStyles = makeStyles({
       paddingRight: '0px !important'
     },
     '*': {
-      fontFamily: `'Ali-Regular', 'sans-serif'`
-    },
-    '@font-face': {
-      fontFamily: 'Ali-Regular',
-      src: `local('Alibaba-PuHuiTi-Regular'),
-        url('https://res.cloudinary.com/stackbunch/raw/upload/v1565955456/blog-assets/Alibaba-PuHuiTi-Regular_dp8dam.woff2')`,
-      fontDisplay: 'swap'
+      fontFamily: `-apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif`
     }
+    // '@font-face': {
+    //   fontFamily: 'Ali-Regular',
+    //   src: `local('Alibaba-PuHuiTi-Regular'),
+    //     url('https://res.cloudinary.com/stackbunch/raw/upload/v1565955456/blog-assets/Alibaba-PuHuiTi-Regular_dp8dam.woff2')`,
+    //   fontDisplay: 'swap'
+    // }
   }
 });
 
