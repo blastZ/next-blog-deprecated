@@ -6,7 +6,8 @@ export const frontMatter = {
   subTitle: '文件权限是 linux 相当重要的一部分内容，通过本文将了解到 linux 文件的属性，以及权限修改等操作。',
   tags: ['linux'],
   date: '2019/09/25',
-  thumb: 'https://res.cloudinary.com/stackbunch/image/upload/w_540,q_auto,c_fill/v1560448899/blog-thumb/ssh-detail_auehbc.jpg',
+  thumb:
+    'https://res.cloudinary.com/stackbunch/image/upload/w_540,q_auto,c_fill/v1570722021/blog-thumb/linux-basic-file-permission_tedtuu.png',
   published: true
 };
 
@@ -75,8 +76,11 @@ drwxr-xr-x  623 blastz  staff   19936  9 25 23:11 node_modules
 修改一个文件的用户组，只要执行 chgrp 命令就可以来，但是修改的组名必须要在 /etc/group 文件中存在才行。
 
 ```bash
-chgrp users dirname/filename #修改 filename 的所属用户组为 users
-chgrp -R users dirname #修改 dirname 及其所有子目录和文件所属用户组为 users
+#修改 filename 的所属用户组为 users
+chgrp users dirname/filename
+
+#修改 dirname 及其所有子目录和文件所属用户组为 users
+chgrp -R users dirname
 ```
 
 /etc/group 文件的内容如下
@@ -86,3 +90,66 @@ certusers:*:29:root,_jabber,_postfix
 ```
 
 代表的含义是 `组名:组密码:组ID:用户1,用户2,用户3`
+
+### 修改文件拥有者，chown（change owner）
+
+```bash
+# 修改 test.js 的拥有者为 test 用户
+chown test test.js
+# 修改 test.js 的拥有者和组为 test 和 test_group
+chown test:test_group test.js
+```
+
+chown 同样支持【-R】参数修改其所有的子目录和文件。
+
+文件的用户和用户组的修改，常用于你使用 cp 复制文件给别人时，cp 并不会修改用户和用户组，如果你不修改的话对方就无法查看这个文件。
+
+### 修改权限，chmod（change mode）
+
+对于 rwx 三种权限，在 linux 中可以使用数字代替对应关系如下：
+
+- r:4
+- w:2
+- x:1
+
+举个 🌰，test.js 的权限为【-rwxrwx---】，对应的权限数字就是 770，如果要修改它的权限，命令如下：
+
+```bash
+# 修改 test.js 的权限为 rwxrwxrwx
+chmod 777 test.js
+```
+
+除了这种方式我们还可以通过，符号类型来修改文件的权限，分别用 u，g，o，a 来代表 user，group，others 和 all。+，-，= 来代表加入，移除和设置权限。
+我们可以通过以下方式来修改文件的权限：
+
+```bash
+# 修改 test.js 的权限为 rwx------
+chmod u=rwx,go=- test.js
+# 使所有用户拥有可读权限
+chmod a+r test.js
+```
+
+## 目录与文件权限的意义
+
+之前讲了文件的三种权限符号【rwx】，但是对于文件和目录来说，权限对于它们来首是有所不同的。
+
+### 权限对文件的重要性
+
+对于 r 权限，就是读取文件内容的权限很好理解。
+
+对于 w 这个权限，它使得你拥有，写入、编辑、新增、修改的权限，但并不包括**删除该文件本身**。
+
+与 windows 由后缀名决定是否可执行不同，在 linux 中文件是否可执行是由权限字符 x 来决定的。
+
+### 权限对目录的重要性
+
+对于目录来说，r 权限就是读取目录列表结构的权限。你可以查询这个目录下的文件名数据，也就是 ls 命令所显示的内容。
+
+w 权限对于目录来说就很重要来，它表示你拥有改动该目录结构列表的权限，也就是以下权限：
+
+- 建立新的文件或目录
+- 删除已有的文件或目录
+- 对已有的文件或目录重命名
+- 移动该目录内的文件或目录位置
+
+目录的 x 权限，并不是表示目录可执行，它代表的是用户能否进入该目录成为工作目录。值得注意的是**如果你没有 x 权限，那么就代表你无法切换到这个目录，也就意味着你不能执行目录下的任何命令，即使你拥有 rw 权限。**
