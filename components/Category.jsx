@@ -10,7 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 const categories = [
   {
     name: 'all',
-    num: 3
+    num: 4
   },
   {
     name: 'tcp/ip',
@@ -18,7 +18,7 @@ const categories = [
   },
   {
     name: 'linux',
-    num: 2
+    num: 3
   },
   {
     name: 'javascript',
